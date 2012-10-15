@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaBuilderPrototyping", "SchemaBuilderPrototyping\SchemaBuilderPrototyping.csproj", "{b812972c-8a22-44ca-b45e-002138ed731e}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaBuilderPrototypingScreens", "SchemaBuilderPrototyping\SchemaBuilderPrototypingScreens\SchemaBuilderPrototypingScreens.csproj", "{9f8d259a-8ff9-495f-a40d-13f737bd49da}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B812972C-8A22-44CA-B45E-002138ED731E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B812972C-8A22-44CA-B45E-002138ED731E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B812972C-8A22-44CA-B45E-002138ED731E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B812972C-8A22-44CA-B45E-002138ED731E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8D259A-8FF9-495F-A40D-13F737BD49DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8D259A-8FF9-495F-A40D-13F737BD49DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8D259A-8FF9-495F-A40D-13F737BD49DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8D259A-8FF9-495F-A40D-13F737BD49DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

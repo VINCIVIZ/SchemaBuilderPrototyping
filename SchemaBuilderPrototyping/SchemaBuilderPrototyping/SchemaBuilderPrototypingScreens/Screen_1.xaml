@@ -1,0 +1,124 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SchemaBuilderPrototypingScreens" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	x:Class="SchemaBuilderPrototypingScreens.Screen_1"
+	Width="1250" Height="720" mc:Ignorable="d">
+
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<StackPanel Orientation="Vertical">
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold"><Run Text="Schema Builder"/></TextBlock>
+			<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" VerticalAlignment="Top">
+				<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" VerticalAlignment="Center" FontSize="28" Margin="10,0,20,0"><Run Text="Current Phrase"/></TextBlock>
+				
+				<Border x:Name="border" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#FFFFAF00" Cursor="Hand">
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="Patient"/></TextBlock>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Relationship)"/></TextBlock>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Concept)"/></TextBlock>
+				</Border>
+				
+				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+"/>
+			</StackPanel>		
+		</StackPanel>
+		
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="400"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			
+			<Rectangle Margin="50,105,50,0" Width="100" Height="100" VerticalAlignment="Top" Stroke="Black" RadiusX="20" RadiusY="20">
+				<Rectangle.Fill>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FF8D8D8D" Offset="1"/>
+						<GradientStop Color="White"/>
+					</LinearGradientBrush>
+				</Rectangle.Fill>
+			</Rectangle>
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" Margin="0,213,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Text="Person"/></TextBlock>
+			
+			<Rectangle Margin="50,305,50,0" Width="100" Height="100" RadiusX="20" RadiusY="20" Stroke="Black" VerticalAlignment="Top">
+				<Rectangle.Fill>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#008D8D8D" Offset="1"/>
+						<GradientStop Color="#00FFFFFF"/>
+					</LinearGradientBrush>
+				</Rectangle.Fill>
+			</Rectangle>
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" Margin="0,415,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"><Run Text="Family Member"/></TextBlock>
+			
+			<Grid Grid.Column="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>	
+				
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				
+				<sdk:HeaderedItemsControl Grid.Column="0" Header="Gender" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">Male</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">Female</RadioButton>
+				</sdk:HeaderedItemsControl>
+				
+				<sdk:HeaderedItemsControl Grid.Column="0" Grid.Row="1" Margin="0,50,50,0" Header="Age" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}"> &lt; 20</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">11 ~ 20</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">21 ~ 30</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">31 ~ 40</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">41 ~ 50</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">51 ~ 60</RadioButton>
+					<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}"> &gt; 60</RadioButton>
+					<RadioButton Name="customAgeRadioButton" Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">
+						<StackPanel Orientation="Horizontal">
+							<TextBox Style="{StaticResource TextBox-Sketch}" Width="30" Text="12" MaxLength="3" TextAlignment="Center" GotFocus="TextBox_GotFocus"/>
+							<TextBlock Style="{StaticResource TextBlock-Sketch}" VerticalAlignment="Center" Margin="5,0,5,0"> ~ </TextBlock>
+							<TextBox Style="{StaticResource TextBox-Sketch}" Width="30" Text="21" MaxLength="3" TextAlignment="Center" GotFocus="TextBox_GotFocus"/>
+						</StackPanel>
+					</RadioButton>
+				</sdk:HeaderedItemsControl>
+				
+				<sdk:HeaderedItemsControl Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" Header="Time of hospitalization" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+					<StackPanel Orientation="Vertical" Margin="20,5,5,5">
+						<TextBlock Style="{StaticResource TextBlock-Sketch}" Margin="0,20,0,20">Select a date range</TextBlock>
+						<StackPanel Orientation="Horizontal">
+							<sdk:Calendar/>
+							<TextBlock Style="{StaticResource TextBlock-Sketch}" Margin="20,0,20,0" VerticalAlignment="Center">To</TextBlock>
+							<sdk:Calendar/>
+						</StackPanel>
+					</StackPanel>
+				</sdk:HeaderedItemsControl>
+				
+			</Grid>
+			
+			
+		</Grid>
+		
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button Style="{StaticResource Button-Sketch}" Margin="20">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<pi:NavigateBackAction/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>Back</Button>
+			<Button Style="{StaticResource Button-Sketch}" Margin="20">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<pi:NavigateForwardAction/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>Next</Button>
+		</StackPanel>
+		
+	</Grid>
+	
+</UserControl>
