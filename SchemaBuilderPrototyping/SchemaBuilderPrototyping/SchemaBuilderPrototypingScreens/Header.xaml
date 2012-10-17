@@ -8,69 +8,72 @@
 	x:Class="SchemaBuilderPrototypingScreens.Header"
 	Width="1250">
 
-	<Grid x:Name="LayoutRoot" Background="White" Margin="5">
+	<Border BorderThickness="0,0,0,5" BorderBrush="Black">
 		<VisualStateManager.VisualStateGroups>
-			<VisualStateGroup x:Name="PhraseState">
-				<VisualState x:Name="PersonWorking">
-					<Storyboard>
-						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="PatientWorking">
-					<Storyboard>
-						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="FamilyMemberWorking">
-					<Storyboard>
-						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="Family Member"/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="ConceptWorking">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
-						</ObjectAnimationUsingKeyFrames>
-						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border1" d:IsOptimized="True"/>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
-		</VisualStateManager.VisualStateGroups>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-		<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold"><Run Text="Schema Builder"/></TextBlock>
-		<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" VerticalAlignment="Top">
-			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" VerticalAlignment="Center" FontSize="28" Margin="10,0,20,0"><Run Text="Current Phrase"/></TextBlock>
+				<VisualStateGroup x:Name="PhraseState">
+					<VisualState x:Name="PersonWorking">
+						<Storyboard>
+							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="PatientWorking">
+						<Storyboard>
+							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="FamilyMemberWorking">
+						<Storyboard>
+							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Family Member"/>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="ConceptWorking">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+							</ObjectAnimationUsingKeyFrames>
+							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border1" d:IsOptimized="True"/>
+						</Storyboard>
+					</VisualState>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+		
+		<Grid x:Name="LayoutRoot" Background="White" Margin="5">
 			
-			<Border x:Name="border" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-				<TextBlock x:Name="personTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><i:Interaction.Triggers>
-						<i:EventTrigger EventName="MouseLeftButtonDown">
-							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Screen_1"/>
-						</i:EventTrigger>
-					</i:Interaction.Triggers><Run Text="(Person)"/></TextBlock>
-			</Border>
-			<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-				<TextBlock x:Name="relationshipTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Relationship)"/></TextBlock>
-			</Border>
-			<Border x:Name="border1" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-				<TextBlock x:Name="conceptTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center">
-					<i:Interaction.Triggers>
-						<i:EventTrigger EventName="MouseLeftButtonDown">
-							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept"/>
-						</i:EventTrigger>
-					</i:Interaction.Triggers><Run Text="(Concept)"/></TextBlock>
-			</Border>
-			
-			<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+"/>
-		</StackPanel>
-	</Grid>
-	
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold"><Run Text="Schema Builder"/></TextBlock>
+			<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" VerticalAlignment="Top">
+				<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" VerticalAlignment="Center" FontSize="28" Margin="10,0,20,0"><Run Text="Current Phrase"/></TextBlock>
+				
+				<Border x:Name="border" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
+					<TextBlock x:Name="personTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><i:Interaction.Triggers>
+							<i:EventTrigger EventName="MouseLeftButtonDown">
+								<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Screen_1"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers><Run Text="(Person)"/></TextBlock>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
+					<TextBlock x:Name="relationshipTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Relationship)"/></TextBlock>
+				</Border>
+				<Border x:Name="border1" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
+					<TextBlock x:Name="conceptTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="MouseLeftButtonDown">
+								<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers><Run Text="(Concept)"/></TextBlock>
+				</Border>
+				
+				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+"/>
+			</StackPanel>
+		</Grid>
+	</Border>
 </UserControl>

@@ -21,20 +21,6 @@
 				
 		<TextBlock Margin="404,212,377,0" Grid.Row="1" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Welcome Screen" FontSize="66.667" Height="92" VerticalAlignment="Top"/>
 		
-		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button Style="{StaticResource Button-Sketch}" Margin="20" Visibility="Collapsed">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Click">
-						<pi:NavigateBackAction/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>Back</Button>
-			<Button Style="{StaticResource Button-Sketch}" Margin="20">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Click">
-						<pi:NavigateForwardAction/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>Next</Button>
-		</StackPanel>
 	</Grid>
 	
 </UserControl>

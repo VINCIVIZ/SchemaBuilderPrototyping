@@ -125,14 +125,21 @@
       <Source>SchemaBuilderPrototypingScreens.Header</Source>
       <Target>SchemaBuilderPrototypingScreens.Screen_1</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
     <Connection>
       <Source>SchemaBuilderPrototypingScreens.Header</Source>
       <Target>SchemaBuilderPrototypingScreens.Concept</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
+      <Target>SchemaBuilderPrototypingScreens.Screen_1</Target>
+      <Type>Navigation</Type>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
   </Connections>
