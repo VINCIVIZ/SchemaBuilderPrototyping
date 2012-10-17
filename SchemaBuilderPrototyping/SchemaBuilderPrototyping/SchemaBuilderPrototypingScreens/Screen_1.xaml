@@ -4,38 +4,48 @@
 	Width="1250" Height="720" mc:Ignorable="d">
 
 	<Grid Background="White">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="PersonSel">
+				<VisualState x:Name="PersonSel_Family">
+					<Storyboard>
+						<ColorAnimation Duration="0" To="Transparent" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle" d:IsOptimized="True"/>
+						<ColorAnimation Duration="0" To="#008D8D8D" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle" d:IsOptimized="True"/>
+						<ColorAnimation Duration="0" To="White" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle1" d:IsOptimized="True"/>
+						<ColorAnimation Duration="0" To="#FF8D8D8D" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle1" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="PersonSel_Patient"/>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 		
-		<StackPanel Orientation="Vertical">
-			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold"><Run Text="Schema Builder"/></TextBlock>
-			<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" VerticalAlignment="Top">
-				<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" VerticalAlignment="Center" FontSize="28" Margin="10,0,20,0"><Run Text="Current Phrase"/></TextBlock>
+		<local:Header d:IsPrototypingComposition="True">
+			<i:Interaction.Triggers>
+				<i:EventTrigger>
+					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="PatientWorking"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</local:Header>
+		<local:Footer Grid.Row="2" d:IsPrototypingComposition="True"/>
 				
-				<Border x:Name="border" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#FFFFAF00" Cursor="Hand">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="Patient"/></TextBlock>
-				</Border>
-				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Relationship)"/></TextBlock>
-				</Border>
-				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Concept)"/></TextBlock>
-				</Border>
-				
-				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+"/>
-			</StackPanel>		
-		</StackPanel>
-		
 		<Grid Grid.Row="1">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="400"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 			
-			<Rectangle Margin="50,105,50,0" Width="100" Height="100" VerticalAlignment="Top" Stroke="Black" RadiusX="20" RadiusY="20">
+			<Rectangle x:Name="rectangle" Margin="50,105,50,0" Width="100" Height="100" VerticalAlignment="Top" Stroke="Black" RadiusX="20" RadiusY="20" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:ActivateStateAction TargetState="PersonSel_Patient"/>
+						<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="PatientWorking"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
 				<Rectangle.Fill>
 					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 						<GradientStop Color="#FF8D8D8D" Offset="1"/>
@@ -43,9 +53,15 @@
 					</LinearGradientBrush>
 				</Rectangle.Fill>
 			</Rectangle>
-			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" Margin="0,213,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Text="Person"/></TextBlock>
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" Margin="0,213,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Patient"/>
 			
-			<Rectangle Margin="50,305,50,0" Width="100" Height="100" RadiusX="20" RadiusY="20" Stroke="Black" VerticalAlignment="Top">
+			<Rectangle x:Name="rectangle1" Margin="50,305,50,0" Width="100" Height="100" RadiusX="20" RadiusY="20" Stroke="Black" VerticalAlignment="Top" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:ActivateStateAction TargetState="PersonSel_Family"/>
+						<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="FamilyMemberWorking"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
 				<Rectangle.Fill>
 					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 						<GradientStop Color="#008D8D8D" Offset="1"/>
@@ -102,23 +118,7 @@
 			</Grid>
 			
 			
-		</Grid>
-		
-		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button Style="{StaticResource Button-Sketch}" Margin="20">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Click">
-						<pi:NavigateBackAction/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>Back</Button>
-			<Button Style="{StaticResource Button-Sketch}" Margin="20">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Click">
-						<pi:NavigateForwardAction/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>Next</Button>
-		</StackPanel>
-		
+		</Grid>				
 	</Grid>
 	
 </UserControl>

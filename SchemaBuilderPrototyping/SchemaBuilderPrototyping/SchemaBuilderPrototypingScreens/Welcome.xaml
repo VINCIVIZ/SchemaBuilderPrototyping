@@ -10,25 +10,15 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 		
-		<StackPanel Orientation="Vertical">
-			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold"><Run Text="Schema Builder"/></TextBlock>
-			<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" VerticalAlignment="Top">
-				<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" VerticalAlignment="Center" FontSize="28" Margin="10,0,20,0"><Run Text="Current Phrase"/></TextBlock>
+		<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True"/>
+		<local:Footer Grid.Row="2" d:IsPrototypingComposition="True">
+			<i:Interaction.Triggers>
+				<i:EventTrigger>
+					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Footer" TargetState="FirstPage"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</local:Footer>		
 				
-				<Border x:Name="border" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Person)"/></TextBlock>
-				</Border>
-				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Relationship)"/></TextBlock>
-				</Border>
-				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Concept)"/></TextBlock>
-				</Border>
-				
-				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+"/>
-			</StackPanel>		
-		</StackPanel>
-		<TextBlock HorizontalAlignment="Left" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Basic Text" VerticalAlignment="Top"/>
 		<TextBlock Margin="404,212,377,0" Grid.Row="1" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Welcome Screen" FontSize="66.667" Height="92" VerticalAlignment="Top"/>
 		
 		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
