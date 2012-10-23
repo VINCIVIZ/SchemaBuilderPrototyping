@@ -2,7 +2,7 @@
 	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
 	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
 	xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-	x:Class="SchemaBuilderPrototypingScreens.Concept"
+	x:Class="SchemaBuilderPrototypingScreens.ConceptExtra"
 	Width="1250" Height="720" mc:Ignorable="d">
 
 	<i:Interaction.Triggers>
@@ -317,7 +317,7 @@
 		<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True">
 			<i:Interaction.Triggers>
 				<i:EventTrigger>
-					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ConceptWorking"/>
+					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ExtraConceptWorking"/>
 				</i:EventTrigger>
 			</i:Interaction.Triggers>
 		</local:Header>
@@ -357,14 +357,8 @@
 				<StackPanel Grid.Column="1" Margin="10,10">
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Enter a variable name (Text pending)"/>
 					<StackPanel Orientation="Horizontal" Margin="5,10">
-						<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" Width="300" Margin="20,0"/>
+						<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="Another Concept" Width="300" Margin="20,0"/>
 						<Button Content="Submit" Style="{StaticResource Button-Sketch}" Width="75">
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Click">
-									<pi:ActivateStateAction TargetState="VarNameSubmitted"/>
-									<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerWorking"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
 						</Button>
 					</StackPanel>
 					
@@ -445,7 +439,7 @@
 				
 				<StackPanel x:Name="stackPanel2" Grid.Column="2" Visibility="Visible">
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Another Concept" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
 					<TextBox Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Height="100" VerticalScrollBarVisibility="Auto"/>		
 				</StackPanel>
 				

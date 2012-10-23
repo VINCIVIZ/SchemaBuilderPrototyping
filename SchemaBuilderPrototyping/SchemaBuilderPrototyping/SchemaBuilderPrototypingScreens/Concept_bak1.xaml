@@ -2,7 +2,7 @@
 	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
 	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
 	xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-	x:Class="SchemaBuilderPrototypingScreens.Concept"
+	x:Class="SchemaBuilderPrototypingScreens.Concept_bak1"
 	Width="1250" Height="720" mc:Ignorable="d">
 
 	<i:Interaction.Triggers>
@@ -85,6 +85,13 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock1">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
@@ -100,6 +107,13 @@
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="stackPanel1">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
 									<Visibility>Collapsed</Visibility>
@@ -169,7 +183,6 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
-						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
 					</Storyboard>
 				</VisualState>
 				<VisualState x:Name="VarNameSubmitted">
@@ -284,29 +297,6 @@
 				</VisualState>
 				<VisualState x:Name="WikiCollapse"/>
 			</VisualStateGroup>
-			<VisualStateGroup x:Name="DefinitionGroup">
-				<VisualState x:Name="DefinitionGroupCorrected">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="stackPanel1">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Visible</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="stackPanel2">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBox.Text)" Storyboard.TargetName="textBox">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -357,12 +347,11 @@
 				<StackPanel Grid.Column="1" Margin="10,10">
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Enter a variable name (Text pending)"/>
 					<StackPanel Orientation="Horizontal" Margin="5,10">
-						<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" Width="300" Margin="20,0"/>
+						<TextBox Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" Width="300" Margin="20,0"/>
 						<Button Content="Submit" Style="{StaticResource Button-Sketch}" Width="75">
 							<i:Interaction.Triggers>
 								<i:EventTrigger EventName="Click">
 									<pi:ActivateStateAction TargetState="VarNameSubmitted"/>
-									<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerWorking"/>
 								</i:EventTrigger>
 							</i:Interaction.Triggers>
 						</Button>
@@ -371,14 +360,7 @@
 					<StackPanel x:Name="stackPanel" Orientation="Horizontal" Margin="5,0">
 						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Did you mean: " Margin="10,0"/>
 						<Border BorderBrush="Black" BorderThickness="0,0,0,1" Cursor="Hand" Margin="5,0">
-							<TextBlock Text="Colon cancer" Style="{StaticResource BasicTextBlock-Sketch}">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="MouseLeftButtonDown">
-										<pi:ActivateStateAction TargetState="DefinitionGroupCorrected"/>
-										<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerCorrectedWorking"/>
-									</i:EventTrigger>
-								</i:Interaction.Triggers>
-							</TextBlock>
+							<TextBlock Text="Colon cancer" Style="{StaticResource BasicTextBlock-Sketch}"/>
 						</Border>					
 						<Border BorderBrush="Black" BorderThickness="0,0,0,1" Cursor="Hand" Margin="5,0">
 							<TextBlock x:Name="textBlock3" Text="Colon cancer screening" Style="{StaticResource BasicTextBlock-Sketch}"/>
@@ -391,6 +373,7 @@
 						</Border>
 					</StackPanel>
 
+					<TextBlock x:Name="textBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Your new variable: ColonCancer" HorizontalAlignment="Center" Margin="0,30,0,0"/>
 					<Rectangle HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
 					<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Select Attributes"/>
 					<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable."/>
@@ -399,16 +382,12 @@
 					
 				</StackPanel>
 				
-				<StackPanel x:Name="stackPanel1" Grid.Column="2" Visibility="Collapsed">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
-					<TextBox Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Text="Colon, or colorectal, cancer is cancer that starts in the large intenstine (colon) or the rectum (end of the colon)." Height="100" VerticalScrollBarVisibility="Auto"/>		
-					
+				<StackPanel x:Name="stackPanel1" Grid.Column="2">
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Link to definition"/>
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer (UMLS)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
 					<RichTextBox x:Name="richTextBox1" Height="100" Margin="5,10" IsReadOnly="True">
 						<Paragraph><Run Text="Colon, or colorectal, cancer is cancer that starts in the large intenstine (colon) or the rectum (end of the colon)."/></Paragraph>
 						<Paragraph><Run Text="Source: "/><Hyperlink NavigateUri="#"><Run Text="UMLS"/></Hyperlink></Paragraph>
-						<Paragraph><Hyperlink NavigateUri="#"><Run Text="Use this definition"/></Hyperlink></Paragraph>
 					</RichTextBox>
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="(Other Definition)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer (Wikipedia)" FontSize="24" TextDecorations="Underline" Margin="10,5" Cursor="Hand">
@@ -438,18 +417,11 @@
 					<RichTextBox x:Name="richTextBox" Height="100" Margin="5,10" IsReadOnly="True" Visibility="Collapsed">
 						<Paragraph><Run Text="Colorectal cancer, commonly known as colon cancer or bowel cancer, is a cancer from uncontrolled cell growth in the colon or rectum (parts of the large intestine), or in the appendix. Genetic analysis shows that colon and rectal tumours are essentially genetically the same cancer.[1] Symptoms of colorectal cancer typically include rectal bleeding and anemia which are sometimes associated with weight loss and changes in bowel habits."/></Paragraph>
 						<Paragraph><Run Text="Source: "/><Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Colorectal_cancer"><Run Text="Wikipedia"/></Hyperlink></Paragraph>
-						<Paragraph><Hyperlink NavigateUri="#"><Run Text="Use this definition"/></Hyperlink></Paragraph>
 					</RichTextBox>
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="(Other Definition)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>	
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="(Other Definition)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>			
 				</StackPanel>
 				
-				<StackPanel x:Name="stackPanel2" Grid.Column="2" Visibility="Visible">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
-					<TextBox Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Height="100" VerticalScrollBarVisibility="Auto"/>		
-				</StackPanel>
-				
-				<Canvas x:Name="canvas" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+				<Canvas x:Name="canvas" Grid.Column="1" Grid.ColumnSpan="2">
 					<Path x:Name="path" Data="M775,50 C778.69763,54.258636 783.79572,56.795692 788,61 C782.52209,66.477905 777.62732,71.89653 773,76" Fill="{StaticResource BaseBackground-Sketch}" Height="28" Canvas.Left="756" Stretch="Fill" Stroke="{StaticResource BaseBorder-Sketch}" StrokeThickness="2" Canvas.Top="48" UseLayoutRounding="False" Width="17" RenderTransformOrigin="0.5,0.5">
 						<Path.RenderTransform>
 							<CompositeTransform/>

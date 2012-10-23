@@ -11,36 +11,129 @@
 	<Border BorderThickness="0,0,0,5" BorderBrush="Black">
 		<VisualStateManager.VisualStateGroups>
 				<VisualStateGroup x:Name="PhraseState">
-					<VisualState x:Name="PersonWorking">
-						<Storyboard>
-							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="PatientWorking">
-						<Storyboard>
-							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
-								<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
-							</ObjectAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="FamilyMemberWorking">
-						<Storyboard>
-							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
-								<DiscreteObjectKeyFrame KeyTime="0" Value="Family Member"/>
-							</ObjectAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="ConceptWorking">
-						<Storyboard>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
-								<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
-							</ObjectAnimationUsingKeyFrames>
-							<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border1" d:IsOptimized="True"/>
-						</Storyboard>
-					</VisualState>
-				</VisualStateGroup>
+				<VisualState x:Name="PersonWorking">
+					<Storyboard>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="PatientWorking">
+					<Storyboard>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="FamilyMemberWorking">
+					<Storyboard>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Family Member"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="ConceptWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border1" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="ColonCancerWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="ColonCancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border1" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="ColonCancerCorrectedWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border1" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="RelationshipWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border3" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="relationshipTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="had history of"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>	
+				<VisualState x:Name="RelationshipTookWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border3" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="relationshipTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="previously took"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>		
+				<VisualState x:Name="RelationshipUnderwentWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border3" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="relationshipTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="underwent"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="ExtraConceptWorking">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="border4">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="border5">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="#FFFFAF00" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border5" d:IsOptimized="True"/>
+		
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="relationshipTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="had history of"/>
+						</ObjectAnimationUsingKeyFrames>						
+					</Storyboard>
+				</VisualState>					
+			</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
 		
 		<Grid x:Name="LayoutRoot" Background="White" Margin="5">
@@ -60,19 +153,47 @@
 							</i:EventTrigger>
 						</i:Interaction.Triggers><Run Text="(Person)"/></TextBlock>
 				</Border>
-				<Border BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock x:Name="relationshipTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center"><Run Text="(Relationship)"/></TextBlock>
+				<Border x:Name="border3" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
+					<TextBlock x:Name="relationshipTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center" Text="(Relationship)">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="MouseLeftButtonDown">
+								<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Relationship"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</TextBlock>
 				</Border>
 				<Border x:Name="border1" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand">
-					<TextBlock x:Name="conceptTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center">
+					<TextBlock x:Name="conceptTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center" Text="(Concept)">
 						<i:Interaction.Triggers>
 							<i:EventTrigger EventName="MouseLeftButtonDown">
 								<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept"/>
 							</i:EventTrigger>
-						</i:Interaction.Triggers><Run Text="(Concept)"/></TextBlock>
+						</i:Interaction.Triggers>
+					</TextBlock>
 				</Border>
 				
-				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+"/>
+				<Border x:Name="border4" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand" Visibility="Collapsed">
+					<TextBlock x:Name="relationship2TextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center" Text="(Relationship)">
+					</TextBlock>
+				</Border>
+				<Border x:Name="border5" BorderBrush="Black" BorderThickness="0,0,0,1" MinWidth="150" Margin="10,0,10,0" Background="#00FFAF00" Cursor="Hand" Visibility="Collapsed">
+					<TextBlock x:Name="concept2TextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="28" HorizontalAlignment="Center" Text="(Concept)">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="MouseLeftButtonDown">
+								<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.ConceptExtra"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</TextBlock>
+				</Border>				
+				
+				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="Click">
+							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.ConceptExtra"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+
+				</Button>
 			</StackPanel>
 		</Grid>
 	</Border>

@@ -67,6 +67,12 @@
     <Compile Include="Concept.xaml.cs">
       <DependentUpon>Concept.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConceptExtra.xaml.cs">
+      <DependentUpon>ConceptExtra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Concept_bak1.xaml.cs">
+      <DependentUpon>Concept_bak1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataStore\DataStore\DataStore.xaml.cs">
       <DependentUpon>DataStore.xaml</DependentUpon>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Relationship.xaml.cs">
+      <DependentUpon>Relationship.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screen_1.xaml.cs">
       <DependentUpon>Screen_1.xaml</DependentUpon>
     </Compile>
@@ -83,6 +92,14 @@
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
     <Page Include="Concept.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConceptExtra.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Concept_bak1.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -102,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <ContainsDataSources>True</ContainsDataSources>
+    </Page>
+    <Page Include="Relationship.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Screen_1.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
