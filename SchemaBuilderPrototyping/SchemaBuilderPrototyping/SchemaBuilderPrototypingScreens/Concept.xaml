@@ -301,7 +301,7 @@
 					</StackPanel>
 					
 					<Rectangle x:Name="rectangle1" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
-					<TextBlock x:Name="linkingTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Link to ???"/>
+					<TextBlock x:Name="linkingTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Link to Synonyms"/>
 					<Grid x:Name="linkGridPanel">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="30"/>
@@ -316,7 +316,7 @@
 						</Grid.RowDefinitions>
 						
 						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Link" HorizontalAlignment="Center"/>
-						<TextBlock Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="???" Margin="10,0,0,0"/>
+						<TextBlock Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="Synonym" Margin="10,0,0,0"/>
 						
 						<Grid Grid.Row="1" Grid.ColumnSpan="2" Background="White">
 							<Grid.ColumnDefinitions>
@@ -387,22 +387,24 @@
 							</i:Interaction.Triggers>
 							<sdk:AutoCompleteBox.DataContext>
 								<ItemsControl>
-									<System:String>Section 1</System:String>
-									<System:String>Section 2</System:String>
-									<System:String>Section 3</System:String>
-									<System:String>Section 4</System:String>
-									<System:String>Section 5</System:String>
+									<System:String>Indication</System:String>
+									<System:String>History</System:String>
+									<System:String>Background</System:String>
+									<System:String>Procedure Description</System:String>
+									<System:String>Procedure Indication</System:String>
+									<System:String>Operation</System:String>
 								</ItemsControl>
 							</sdk:AutoCompleteBox.DataContext>
 						</sdk:AutoCompleteBox>
 						<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
 							<sdk:AutoCompleteBox.DataContext>
 								<ItemsControl>
-									<System:String>Section 1</System:String>
-									<System:String>Section 2</System:String>
-									<System:String>Section 3</System:String>
-									<System:String>Section 4</System:String>
-									<System:String>Section 5</System:String>
+									<System:String>Indication</System:String>
+									<System:String>History</System:String>
+									<System:String>Background</System:String>
+									<System:String>Procedure Description</System:String>
+									<System:String>Procedure Indication</System:String>
+									<System:String>Operation</System:String>
 								</ItemsControl>
 							</sdk:AutoCompleteBox.DataContext>
 						</sdk:AutoCompleteBox>
