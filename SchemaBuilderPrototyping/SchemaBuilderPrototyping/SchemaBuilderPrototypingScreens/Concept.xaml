@@ -25,13 +25,6 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="variableLinkControl">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
@@ -330,7 +323,7 @@
 							</HyperlinkButton>
 						</Grid>
 						
-						<local:VariableLinkControl Grid.Row="2" Grid.ColumnSpan="2" Tag="Colon cancer screening"/>
+						<local:VariableLinkControl x:Name="variableLinkControl" Grid.Row="2" Grid.ColumnSpan="2" Tag="Colon cancer screening"/>
 						<local:VariableLinkControl Grid.Row="3" Grid.ColumnSpan="2" Tag="Colonoscopy"/>
 						<local:VariableLinkControl Grid.Row="4" Grid.ColumnSpan="2" Tag="Colon bacillus"/>						
 					</Grid>
@@ -340,6 +333,15 @@
 					<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable."/>
 					
 					<Image x:Name="image" Source="Image1.png" Stretch="Fill" HorizontalAlignment="Left" Height="297" Width="606" Margin="20,0,0,0"/>
+					
+					<Rectangle x:Name="rectangle3" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
+					<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
+					<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
+					<StackPanel Orientation="Vertical">
+						<sdk:AutoCompleteBox>
+							
+						</sdk:AutoCompleteBox>
+					</StackPanel>
 					
 				</StackPanel>
 				
