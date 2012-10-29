@@ -195,6 +195,47 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle3">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="sectionTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="sectionMsgTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="stackPanel">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="SectionComboGroup">
+				<VisualState x:Name="SectionExtraVisible">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="autoCompleteBox">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
 			</VisualStateGroup>
@@ -337,9 +378,33 @@
 					<Rectangle x:Name="rectangle3" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
 					<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
 					<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
-					<StackPanel Orientation="Vertical">
-						<sdk:AutoCompleteBox>
-							
+					<StackPanel x:Name="stackPanel" Orientation="Vertical" Width="200" HorizontalAlignment="Left" >
+						<sdk:AutoCompleteBox ItemsSource="{Binding Items}" Margin="20,20,0,0">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="TextChanged">
+									<pi:ActivateStateAction TargetState="SectionExtraVisible"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+							<sdk:AutoCompleteBox.DataContext>
+								<ItemsControl>
+									<System:String>Section 1</System:String>
+									<System:String>Section 2</System:String>
+									<System:String>Section 3</System:String>
+									<System:String>Section 4</System:String>
+									<System:String>Section 5</System:String>
+								</ItemsControl>
+							</sdk:AutoCompleteBox.DataContext>
+						</sdk:AutoCompleteBox>
+						<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
+							<sdk:AutoCompleteBox.DataContext>
+								<ItemsControl>
+									<System:String>Section 1</System:String>
+									<System:String>Section 2</System:String>
+									<System:String>Section 3</System:String>
+									<System:String>Section 4</System:String>
+									<System:String>Section 5</System:String>
+								</ItemsControl>
+							</sdk:AutoCompleteBox.DataContext>
 						</sdk:AutoCompleteBox>
 					</StackPanel>
 					
