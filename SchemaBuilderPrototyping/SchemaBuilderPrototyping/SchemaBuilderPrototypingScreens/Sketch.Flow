@@ -99,6 +99,30 @@
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.Copy_of_Concept_bak2</ClassName>
+      <DisplayName>Concept_bak2</DisplayName>
+      <FileName>Copy_of_Concept_bak2.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>249</X>
+        <Y>97</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Composition</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.VariableLinkControl</ClassName>
+      <DisplayName>VariableLinkControl</DisplayName>
+      <FileName>VariableLinkControl.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>239</X>
+        <Y>-31</Y>
+      </Position>
+      <VisualTag>1</VisualTag>
+    </Screen>
   </Screens>
   <Connections>
     <Connection>
@@ -234,6 +258,27 @@
       <TransitionType>Fade</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Copy_of_Concept_bak2</Source>
+      <Target>SchemaBuilderPrototypingScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Copy_of_Concept_bak2</Source>
+      <Target>SchemaBuilderPrototypingScreens.Footer</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
+      <Target>SchemaBuilderPrototypingScreens.VariableLinkControl</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
   </Connections>
   <PrototypeRevision>0</PrototypeRevision>
   <BrandingText>Microsoft SketchFlow Prototype</BrandingText>
@@ -281,8 +326,8 @@
   <ViewState>
     <Zoom>1.125</Zoom>
     <Center>
-      <X>337.36722722917574</X>
-      <Y>40.62634254634267</Y>
+      <X>343.05274811817412</X>
+      <Y>1.9546294707366578</Y>
     </Center>
   </ViewState>
 </Data>

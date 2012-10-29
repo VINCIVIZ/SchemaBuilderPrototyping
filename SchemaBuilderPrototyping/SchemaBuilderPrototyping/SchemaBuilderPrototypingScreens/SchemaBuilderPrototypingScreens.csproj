@@ -73,6 +73,9 @@
     <Compile Include="Concept_bak1.xaml.cs">
       <DependentUpon>Concept_bak1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Copy_of_Concept_bak2.xaml.cs">
+      <DependentUpon>Copy_of_Concept_bak2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataStore\DataStore\DataStore.xaml.cs">
       <DependentUpon>DataStore.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,9 @@
     <Compile Include="Screen_1.xaml.cs">
       <DependentUpon>Screen_1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VariableLinkControl.xaml.cs">
+      <DependentUpon>VariableLinkControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
@@ -100,6 +106,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Concept_bak1.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Copy_of_Concept_bak2.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -136,6 +146,10 @@
     <Compile Include="..\Properties\Version.cs">
       <Link>Properties\Version.cs</Link>
     </Compile>
+    <Page Include="VariableLinkControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Welcome.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
@@ -148,6 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <DesignTimeOnly Include="DataStore\DataStore\DataStore.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Feedback Files\BLUMeeting20121018.feedback" />
+    <None Include="Feedback Files\BLUMeeting20121023.feedback" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

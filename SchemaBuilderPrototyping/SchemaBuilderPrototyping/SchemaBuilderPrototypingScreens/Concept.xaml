@@ -7,232 +7,13 @@
 
 	<i:Interaction.Triggers>
 		<i:EventTrigger>
+			<pi:ActivateStateAction TargetState="ColonCancerWorking" TargetScreen="SchemaBuilderPrototypingScreens.Header"/>
 			<pi:ActivateStateAction TargetState="VarNameNotSubmitted"/>
 		</i:EventTrigger>
 	</i:Interaction.Triggers>
 
 	<Grid Background="White">
 		<VisualStateManager.VisualStateGroups>
-			<VisualStateGroup x:Name="VarNameSubmit">
-				<VisualStateGroup.Transitions>
-					<VisualTransition GeneratedDuration="0">
-						<Storyboard>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox1">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox2">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox3">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox1">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox2">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox3">
-								<DiscreteObjectKeyFrame KeyTime="0">
-									<DiscreteObjectKeyFrame.Value>
-										<System:Boolean>False</System:Boolean>
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualTransition>
-				</VisualStateGroup.Transitions>
-				<VisualState x:Name="VarNameNotSubmitted">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="stackPanel">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock1">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock2">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="canvas">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox1">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox2">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox1">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox2">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>True</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="VarNameSubmitted">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox1">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox2">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.IsChecked)" Storyboard.TargetName="checkBox3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox1">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox2">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="checkBox3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<System:Boolean>False</System:Boolean>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
 			<VisualStateGroup x:Name="TestCategoryChecking">
 				<VisualState x:Name="TestChecked"/>
 				<VisualState x:Name="TestUnchecked">
@@ -245,6 +26,13 @@
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock3">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="variableLinkControl">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
 									<Visibility>Collapsed</Visibility>
@@ -280,6 +68,13 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="hyperlinkButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
 				<VisualState x:Name="WikiCollapse"/>
@@ -301,8 +96,111 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="DefinitionGroupOriginal"/>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="VariableName">
+				<VisualState x:Name="VariableNameOriginal"/>
+				<VisualState x:Name="VariableNameChanged">
+					<Storyboard>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBox.Text)" Storyboard.TargetName="textBox">
 							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="DefinitionUsageHighlight">
+				<VisualState x:Name="UMLSHighlighted"/>
+				<VisualState x:Name="WikiHighlighted">
+					<Storyboard>
+						<ColorAnimation Duration="0" To="#FFFFBB00" Storyboard.TargetProperty="(Control.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="richTextBox" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.BorderThickness)" Storyboard.TargetName="richTextBox">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Thickness>1</Thickness>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Direction)" Storyboard.TargetName="richTextBox" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="richTextBox" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0" To="15" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" Storyboard.TargetName="richTextBox" d:IsOptimized="True"/>
+						<ColorAnimation Duration="0" To="#FFFFBB00" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" Storyboard.TargetName="richTextBox" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="richTextBox1" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="richTextBox" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBox.Text)" Storyboard.TargetName="textBox1">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colorectal cancer, commonly known as colon cancer or bowel cancer, is a cancer from uncontrolled cell growth in the colon or rectum (parts of the large intestine), or in the appendix. Genetic analysis shows that colon and rectal tumours are essentially genetically the same cancer.[1] Symptoms of colorectal cancer typically include rectal bleeding and anemia which are sometimes associated with weight loss and changes in bowel habits."/>
+						</ObjectAnimationUsingKeyFrames>
+						<ColorAnimation Duration="0" To="Black" Storyboard.TargetProperty="(Control.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="richTextBox1" d:IsOptimized="True"/>
+					</Storyboard>	
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="VarNameSubmission">
+				<VisualState x:Name="VarNameSubmitted"/>
+				<VisualState x:Name="VarNameNotSubmitted">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="linkingTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="linkGridPanel">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle2">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock1">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock2">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock3">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBox2">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock4">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
@@ -368,30 +266,76 @@
 						</Button>
 					</StackPanel>
 					
-					<StackPanel x:Name="stackPanel" Orientation="Horizontal" Margin="5,0">
-						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Did you mean: " Margin="10,0"/>
-						<Border BorderBrush="Black" BorderThickness="0,0,0,1" Cursor="Hand" Margin="5,0">
-							<TextBlock Text="Colon cancer" Style="{StaticResource BasicTextBlock-Sketch}">
+					<Rectangle x:Name="rectangle1" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
+					<TextBlock x:Name="linkingTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Link to ???"/>
+					<Grid x:Name="linkGridPanel">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="30"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Link" HorizontalAlignment="Center"/>
+						<TextBlock Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="???" Margin="10,0,0,0"/>
+						
+						<Grid Grid.Row="1" Grid.ColumnSpan="2" Background="White">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="30"/>
+								<ColumnDefinition Width="150"/>
+								<ColumnDefinition Width="150"/>
+							</Grid.ColumnDefinitions>
+							
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="MouseEnter">
+									<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerHyperlinkButton}" PropertyName="Visibility" TargetName="hyperlinkButton">
+										<ei:ChangePropertyAction.Value>
+											<Visibility>Visible</Visibility>
+										</ei:ChangePropertyAction.Value>
+									</ei:ChangePropertyAction>
+								</i:EventTrigger>
+								<i:EventTrigger EventName="MouseLeave">
+									<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerHyperlinkButton}" PropertyName="Visibility" TargetName="hyperlinkButton">
+										<ei:ChangePropertyAction.Value>
+											<Visibility>Collapsed</Visibility>
+										</ei:ChangePropertyAction.Value>
+									</ei:ChangePropertyAction>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+							
+							<CheckBox x:Name="colonCancerCheckBox" Style="{StaticResource CheckBox-Sketch}" HorizontalAlignment="Center" VerticalAlignment="Center">
 								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="MouseLeftButtonDown">
+									<i:EventTrigger EventName="Checked">
 										<pi:ActivateStateAction TargetState="DefinitionGroupCorrected"/>
-										<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerCorrectedWorking"/>
 									</i:EventTrigger>
+									<i:EventTrigger EventName="Unchecked">
+										<pi:ActivateStateAction TargetState="DefinitionGroupOriginal"/>
+									</i:EventTrigger>									
 								</i:Interaction.Triggers>
-							</TextBlock>
-						</Border>					
-						<Border BorderBrush="Black" BorderThickness="0,0,0,1" Cursor="Hand" Margin="5,0">
-							<TextBlock x:Name="textBlock3" Text="Colon cancer screening" Style="{StaticResource BasicTextBlock-Sketch}"/>
-						</Border>
-						<Border BorderBrush="Black" BorderThickness="0,0,0,1" Cursor="Hand" Margin="5,0">
-							<TextBlock Text="Colonoscopy" Style="{StaticResource BasicTextBlock-Sketch}"/>
-						</Border>
-						<Border BorderBrush="Black" BorderThickness="0,0,0,1" Cursor="Hand" Margin="5,0">
-							<TextBlock Text="Colon bacillus" Style="{StaticResource BasicTextBlock-Sketch}"/>
-						</Border>
-					</StackPanel>
-
-					<Rectangle HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
+							</CheckBox>
+							<TextBlock x:Name="textBlock" Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer"/>
+							<HyperlinkButton x:Name="colonCancerHyperlinkButton" Grid.Column="2" Content="Use as variable name" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="Click">
+										<pi:ActivateStateAction TargetState="VariableNameChanged"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerCheckBox}" PropertyName="IsChecked" Value="True"/>
+										<pi:ActivateStateAction TargetState="ColonCancerCorrectedWorking" TargetScreen="SchemaBuilderPrototypingScreens.Header"/>
+									</i:EventTrigger>																											
+								</i:Interaction.Triggers>
+							</HyperlinkButton>
+						</Grid>
+						
+						<local:VariableLinkControl Grid.Row="2" Grid.ColumnSpan="2" Tag="Colon cancer screening"/>
+						<local:VariableLinkControl Grid.Row="3" Grid.ColumnSpan="2" Tag="Colonoscopy"/>
+						<local:VariableLinkControl Grid.Row="4" Grid.ColumnSpan="2" Tag="Colon bacillus"/>						
+					</Grid>
+					
+					<Rectangle x:Name="rectangle2" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
 					<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Select Attributes"/>
 					<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable."/>
 					
@@ -402,14 +346,31 @@
 				<StackPanel x:Name="stackPanel1" Grid.Column="2" Visibility="Collapsed">
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
-					<TextBox Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Text="Colon, or colorectal, cancer is cancer that starts in the large intenstine (colon) or the rectum (end of the colon)." Height="100" VerticalScrollBarVisibility="Auto"/>		
+					<TextBox x:Name="textBox1" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Text="Colon, or colorectal, cancer is cancer that starts in the large intenstine (colon) or the rectum (end of the colon)." Height="100" VerticalScrollBarVisibility="Auto"/>		
+					
+					<Rectangle HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
 					
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer (UMLS)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
-					<RichTextBox x:Name="richTextBox1" Height="100" Margin="5,10" IsReadOnly="True">
+					<RichTextBox x:Name="richTextBox1" Height="80" Margin="5,10" IsReadOnly="True" BorderBrush="#FFFFBB00">
+						<RichTextBox.Effect>
+							<DropShadowEffect ShadowDepth="0" Color="#FFFFBB00" Direction="0" BlurRadius="15"/>
+						</RichTextBox.Effect>
 						<Paragraph><Run Text="Colon, or colorectal, cancer is cancer that starts in the large intenstine (colon) or the rectum (end of the colon)."/></Paragraph>
 						<Paragraph><Run Text="Source: "/><Hyperlink NavigateUri="#"><Run Text="UMLS"/></Hyperlink></Paragraph>
-						<Paragraph><Hyperlink NavigateUri="#"><Run Text="Use this definition"/></Hyperlink></Paragraph>
+						<!--<Paragraph>
+							<Hyperlink NavigateUri="#">
+								<Run Text="Use this definition"/>
+							</Hyperlink>
+						</Paragraph>-->
 					</RichTextBox>
+					<HyperlinkButton Content="Use this definition" HorizontalAlignment="Center">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:ActivateStateAction TargetState="UMLSHighlighted"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>	
+					</HyperlinkButton>
+					
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="(Other Definition)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer (Wikipedia)" FontSize="24" TextDecorations="Underline" Margin="10,5" Cursor="Hand">
 						<i:Interaction.Triggers>
@@ -435,18 +396,28 @@
 							</i:EventTrigger>							
 						</i:Interaction.Triggers>
 					</TextBlock>
-					<RichTextBox x:Name="richTextBox" Height="100" Margin="5,10" IsReadOnly="True" Visibility="Collapsed">
+					<RichTextBox x:Name="richTextBox" Height="100" Margin="5,10" IsReadOnly="True" BorderBrush="Black" Visibility="Collapsed">
+						<RichTextBox.Effect>
+							<DropShadowEffect BlurRadius="0" Opacity="0"/>
+						</RichTextBox.Effect>
 						<Paragraph><Run Text="Colorectal cancer, commonly known as colon cancer or bowel cancer, is a cancer from uncontrolled cell growth in the colon or rectum (parts of the large intestine), or in the appendix. Genetic analysis shows that colon and rectal tumours are essentially genetically the same cancer.[1] Symptoms of colorectal cancer typically include rectal bleeding and anemia which are sometimes associated with weight loss and changes in bowel habits."/></Paragraph>
 						<Paragraph><Run Text="Source: "/><Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Colorectal_cancer"><Run Text="Wikipedia"/></Hyperlink></Paragraph>
-						<Paragraph><Hyperlink NavigateUri="#"><Run Text="Use this definition"/></Hyperlink></Paragraph>
+						<!--<Paragraph><Hyperlink NavigateUri="#"><Run Text="Use this definition"/></Hyperlink></Paragraph>-->
 					</RichTextBox>
+					<HyperlinkButton x:Name="hyperlinkButton" Content="Use this definition" HorizontalAlignment="Center" Visibility="Collapsed">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:ActivateStateAction TargetState="WikiHighlighted"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>	
+					</HyperlinkButton>
 					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="(Other Definition)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>	
 				</StackPanel>
 				
-				<StackPanel x:Name="stackPanel2" Grid.Column="2" Visibility="Visible">
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
-					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
-					<TextBox Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Height="100" VerticalScrollBarVisibility="Auto"/>		
+				<StackPanel x:Name="stackPanel2" Grid.Column="2">
+					<TextBlock x:Name="textBlock4" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
+					<TextBlock x:Name="textBlock3" Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
+					<TextBox x:Name="textBox2" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Height="100" VerticalScrollBarVisibility="Auto"/>		
 				</StackPanel>
 				
 				<Canvas x:Name="canvas" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
