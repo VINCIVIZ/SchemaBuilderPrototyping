@@ -132,6 +132,26 @@
 							<DiscreteObjectKeyFrame KeyTime="0" Value="had history of"/>
 						</ObjectAnimationUsingKeyFrames>						
 					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="PhraseCompleted">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="personTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Patient"/>
+						</ObjectAnimationUsingKeyFrames>						
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="conceptTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Colon Cancer"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="relationshipTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="underwent"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
 				</VisualState>					
 			</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
@@ -186,7 +206,7 @@
 					</TextBlock>
 				</Border>				
 				
-				<Button Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+">
+				<Button x:Name="button" Style="{StaticResource Button-Sketch}" FontSize="25" Width="38" Margin="20,0,0,0" Content="+">
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Click">
 							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.ConceptExtra"/>

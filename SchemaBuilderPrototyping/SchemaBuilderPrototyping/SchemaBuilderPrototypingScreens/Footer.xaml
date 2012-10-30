@@ -3,6 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
 	mc:Ignorable="d"
 	x:Class="SchemaBuilderPrototypingScreens.Footer">
 
@@ -18,18 +19,37 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button2">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
 				<VisualState x:Name="LastPage">
 					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="button1">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="Finish"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button1">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
+
 					</Storyboard>
 				</VisualState>
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
-			<Button x:Name="button" Style="{StaticResource Button-Sketch}" Margin="20">Back</Button>
-			<Button x:Name="button1" Style="{StaticResource Button-Sketch}" Margin="20">Next</Button>
+		<Button x:Name="button" Style="{StaticResource Button-Sketch}" Margin="20" Content="Back"/>
+		<Button x:Name="button1" Style="{StaticResource Button-Sketch}" Margin="20" Content="Next"/>
+		<Button x:Name="button2" Style="{StaticResource Button-Sketch}" Margin="20" Content="Finish">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Finish"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
 	</StackPanel>
 </UserControl>

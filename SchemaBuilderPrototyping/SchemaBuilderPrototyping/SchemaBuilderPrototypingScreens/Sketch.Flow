@@ -123,6 +123,18 @@
       </Position>
       <VisualTag>1</VisualTag>
     </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.Finish</ClassName>
+      <DisplayName>Finish</DisplayName>
+      <FileName>Finish.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>627</X>
+        <Y>29</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
   </Screens>
   <Connections>
     <Connection>
@@ -279,6 +291,20 @@
       <TransitionType>None</TransitionType>
       <VisualTag>1</VisualTag>
     </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Footer</Source>
+      <Target>SchemaBuilderPrototypingScreens.Finish</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Finish</Source>
+      <Target>SchemaBuilderPrototypingScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
   </Connections>
   <PrototypeRevision>0</PrototypeRevision>
   <BrandingText>Microsoft SketchFlow Prototype</BrandingText>
@@ -324,10 +350,10 @@
     </VisualTag>
   </VisualTags>
   <ViewState>
-    <Zoom>1.125</Zoom>
+    <Zoom>1</Zoom>
     <Center>
-      <X>343.05274811817412</X>
-      <Y>1.9546294707366578</Y>
+      <X>282.62147677151711</X>
+      <Y>47.521739130434796</Y>
     </Center>
   </ViewState>
 </Data>
