@@ -195,13 +195,6 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="sectionTextBlock">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
@@ -301,72 +294,126 @@
 					</StackPanel>
 					
 					<Rectangle x:Name="rectangle1" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
-					<TextBlock x:Name="linkingTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Link to Synonyms"/>
-					<Grid x:Name="linkGridPanel">
+					
+					<Grid>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="30"/>
+							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="*"/>
 						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="Auto"/>
-						</Grid.RowDefinitions>
 						
-						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Link" HorizontalAlignment="Center"/>
-						<TextBlock Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="Synonym" Margin="10,0,0,0"/>
+						<StackPanel Grid.Column="0">
+							<TextBlock x:Name="linkingTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Link to Synonyms"/>
+							<Grid x:Name="linkGridPanel">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="30"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								
+								<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Link" HorizontalAlignment="Center"/>
+								<TextBlock Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="Synonym" Margin="10,0,0,0"/>
+								
+								<Grid Grid.Row="1" Grid.ColumnSpan="2" Background="White">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="30"/>
+										<ColumnDefinition Width="150"/>
+										<ColumnDefinition Width="150"/>
+									</Grid.ColumnDefinitions>
+									
+									<i:Interaction.Triggers>
+										<i:EventTrigger EventName="MouseEnter">
+											<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerHyperlinkButton}" PropertyName="Visibility" TargetName="hyperlinkButton">
+												<ei:ChangePropertyAction.Value>
+													<Visibility>Visible</Visibility>
+												</ei:ChangePropertyAction.Value>
+											</ei:ChangePropertyAction>
+										</i:EventTrigger>
+										<i:EventTrigger EventName="MouseLeave">
+											<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerHyperlinkButton}" PropertyName="Visibility" TargetName="hyperlinkButton">
+												<ei:ChangePropertyAction.Value>
+													<Visibility>Collapsed</Visibility>
+												</ei:ChangePropertyAction.Value>
+											</ei:ChangePropertyAction>
+										</i:EventTrigger>
+									</i:Interaction.Triggers>
+									
+									<CheckBox x:Name="colonCancerCheckBox" Style="{StaticResource CheckBox-Sketch}" HorizontalAlignment="Center" VerticalAlignment="Center">
+										<i:Interaction.Triggers>
+											<i:EventTrigger EventName="Checked">
+												<pi:ActivateStateAction TargetState="DefinitionGroupCorrected"/>
+											</i:EventTrigger>
+											<i:EventTrigger EventName="Unchecked">
+												<pi:ActivateStateAction TargetState="DefinitionGroupOriginal"/>
+											</i:EventTrigger>									
+										</i:Interaction.Triggers>
+									</CheckBox>
+									<TextBlock x:Name="textBlock" Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer"/>
+									<HyperlinkButton x:Name="colonCancerHyperlinkButton" Grid.Column="2" Content="Use as variable name" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed">
+										<i:Interaction.Triggers>
+											<i:EventTrigger EventName="Click">
+												<pi:ActivateStateAction TargetState="VariableNameChanged"/>
+												<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerCheckBox}" PropertyName="IsChecked" Value="True"/>
+												<pi:ActivateStateAction TargetState="ColonCancerCorrectedWorking" TargetScreen="SchemaBuilderPrototypingScreens.Header"/>
+											</i:EventTrigger>																											
+										</i:Interaction.Triggers>
+									</HyperlinkButton>
+								</Grid>
+								
+								<local:VariableLinkControl x:Name="variableLinkControl" Grid.Row="2" Grid.ColumnSpan="2" Tag="Colon cancer screening"/>
+								<local:VariableLinkControl Grid.Row="3" Grid.ColumnSpan="2" Tag="Colonoscopy"/>
+								<local:VariableLinkControl Grid.Row="4" Grid.ColumnSpan="2" Tag="Colon bacillus"/>						
+							</Grid>
+						</StackPanel>
 						
-						<Grid Grid.Row="1" Grid.ColumnSpan="2" Background="White">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="30"/>
-								<ColumnDefinition Width="150"/>
-								<ColumnDefinition Width="150"/>
-							</Grid.ColumnDefinitions>
-							
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="MouseEnter">
-									<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerHyperlinkButton}" PropertyName="Visibility" TargetName="hyperlinkButton">
-										<ei:ChangePropertyAction.Value>
-											<Visibility>Visible</Visibility>
-										</ei:ChangePropertyAction.Value>
-									</ei:ChangePropertyAction>
-								</i:EventTrigger>
-								<i:EventTrigger EventName="MouseLeave">
-									<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerHyperlinkButton}" PropertyName="Visibility" TargetName="hyperlinkButton">
-										<ei:ChangePropertyAction.Value>
-											<Visibility>Collapsed</Visibility>
-										</ei:ChangePropertyAction.Value>
-									</ei:ChangePropertyAction>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
-							
-							<CheckBox x:Name="colonCancerCheckBox" Style="{StaticResource CheckBox-Sketch}" HorizontalAlignment="Center" VerticalAlignment="Center">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="Checked">
-										<pi:ActivateStateAction TargetState="DefinitionGroupCorrected"/>
-									</i:EventTrigger>
-									<i:EventTrigger EventName="Unchecked">
-										<pi:ActivateStateAction TargetState="DefinitionGroupOriginal"/>
-									</i:EventTrigger>									
-								</i:Interaction.Triggers>
-							</CheckBox>
-							<TextBlock x:Name="textBlock" Grid.Column="1" Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer"/>
-							<HyperlinkButton x:Name="colonCancerHyperlinkButton" Grid.Column="2" Content="Use as variable name" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="Click">
-										<pi:ActivateStateAction TargetState="VariableNameChanged"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=colonCancerCheckBox}" PropertyName="IsChecked" Value="True"/>
-										<pi:ActivateStateAction TargetState="ColonCancerCorrectedWorking" TargetScreen="SchemaBuilderPrototypingScreens.Header"/>
-									</i:EventTrigger>																											
-								</i:Interaction.Triggers>
-							</HyperlinkButton>
-						</Grid>
 						
-						<local:VariableLinkControl x:Name="variableLinkControl" Grid.Row="2" Grid.ColumnSpan="2" Tag="Colon cancer screening"/>
-						<local:VariableLinkControl Grid.Row="3" Grid.ColumnSpan="2" Tag="Colonoscopy"/>
-						<local:VariableLinkControl Grid.Row="4" Grid.ColumnSpan="2" Tag="Colon bacillus"/>						
+						<StackPanel Grid.Column="1">
+							<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
+							<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
+							<StackPanel x:Name="stackPanel" Orientation="Vertical" Width="200" HorizontalAlignment="Left" >
+								<sdk:AutoCompleteBox x:Name="autoCompleteBox1" ItemsSource="{Binding Items}" Margin="20,20,0,0">
+									<i:Interaction.Triggers>
+										<i:EventTrigger EventName="LostFocus">
+											<i:Interaction.Behaviors>
+												<ei:ConditionBehavior>
+													<ei:ConditionalExpression>
+														<ei:ComparisonCondition LeftOperand="{Binding Text, ElementName=autoCompleteBox1}" Operator="NotEqual" RightOperand=""/>
+													</ei:ConditionalExpression>
+												</ei:ConditionBehavior>
+											</i:Interaction.Behaviors>
+											<pi:ActivateStateAction TargetState="SectionExtraVisible"/>
+										</i:EventTrigger>
+									</i:Interaction.Triggers>
+									<sdk:AutoCompleteBox.DataContext>
+										<ItemsControl>
+											<System:String>Indication</System:String>
+											<System:String>History</System:String>
+											<System:String>Background</System:String>
+											<System:String>Procedure Description</System:String>
+											<System:String>Procedure Indication</System:String>
+											<System:String>Operation</System:String>
+										</ItemsControl>
+									</sdk:AutoCompleteBox.DataContext>
+								</sdk:AutoCompleteBox>
+								<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
+									<sdk:AutoCompleteBox.DataContext>
+										<ItemsControl>
+											<System:String>Indication</System:String>
+											<System:String>History</System:String>
+											<System:String>Background</System:String>
+											<System:String>Procedure Description</System:String>
+											<System:String>Procedure Indication</System:String>
+											<System:String>Operation</System:String>
+										</ItemsControl>
+									</sdk:AutoCompleteBox.DataContext>
+								</sdk:AutoCompleteBox>
+							</StackPanel>
+						</StackPanel>
 					</Grid>
 					
 					<Rectangle x:Name="rectangle2" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
@@ -374,41 +421,6 @@
 					<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable."/>
 					
 					<Image x:Name="image" Source="Image1.png" Stretch="Fill" HorizontalAlignment="Left" Height="297" Width="606" Margin="20,0,0,0"/>
-					
-					<Rectangle x:Name="rectangle3" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
-					<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
-					<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
-					<StackPanel x:Name="stackPanel" Orientation="Vertical" Width="200" HorizontalAlignment="Left" >
-						<sdk:AutoCompleteBox ItemsSource="{Binding Items}" Margin="20,20,0,0">
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="TextChanged">
-									<pi:ActivateStateAction TargetState="SectionExtraVisible"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
-							<sdk:AutoCompleteBox.DataContext>
-								<ItemsControl>
-									<System:String>Indication</System:String>
-									<System:String>History</System:String>
-									<System:String>Background</System:String>
-									<System:String>Procedure Description</System:String>
-									<System:String>Procedure Indication</System:String>
-									<System:String>Operation</System:String>
-								</ItemsControl>
-							</sdk:AutoCompleteBox.DataContext>
-						</sdk:AutoCompleteBox>
-						<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
-							<sdk:AutoCompleteBox.DataContext>
-								<ItemsControl>
-									<System:String>Indication</System:String>
-									<System:String>History</System:String>
-									<System:String>Background</System:String>
-									<System:String>Procedure Description</System:String>
-									<System:String>Procedure Indication</System:String>
-									<System:String>Operation</System:String>
-								</ItemsControl>
-							</sdk:AutoCompleteBox.DataContext>
-						</sdk:AutoCompleteBox>
-					</StackPanel>
 					
 				</StackPanel>
 				
