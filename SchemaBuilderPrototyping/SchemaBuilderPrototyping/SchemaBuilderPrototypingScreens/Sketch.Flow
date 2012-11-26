@@ -70,8 +70,8 @@
       <FileName>Concept_bak1.xaml</FileName>
       <Annotations />
       <Position>
-        <X>249</X>
-        <Y>62</Y>
+        <X>251</X>
+        <Y>140</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -82,8 +82,8 @@
       <FileName>Relationship.xaml</FileName>
       <Annotations />
       <Position>
-        <X>378</X>
-        <Y>28</Y>
+        <X>722</X>
+        <Y>29</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -94,8 +94,8 @@
       <FileName>ConceptExtra.xaml</FileName>
       <Annotations />
       <Position>
-        <X>513</X>
-        <Y>29</Y>
+        <X>857</X>
+        <Y>30</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -106,8 +106,8 @@
       <FileName>Copy_of_Concept_bak2.xaml</FileName>
       <Annotations />
       <Position>
-        <X>249</X>
-        <Y>97</Y>
+        <X>251</X>
+        <Y>175</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -130,8 +130,56 @@
       <FileName>Finish.xaml</FileName>
       <Annotations />
       <Position>
-        <X>627</X>
-        <Y>29</Y>
+        <X>971</X>
+        <Y>30</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.Concept_bak3</ClassName>
+      <DisplayName>Concept_bak3</DisplayName>
+      <FileName>Concept_bak3.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>250</X>
+        <Y>214</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Composition</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.ConceptStepList</ClassName>
+      <DisplayName>ConceptStepList</DisplayName>
+      <FileName>ConceptStepList.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>384</X>
+        <Y>-32</Y>
+      </Position>
+      <VisualTag>1</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.Concept_Synonyms</ClassName>
+      <DisplayName>Concept_Synonyms</DisplayName>
+      <FileName>Concept_Synonyms.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>532</X>
+        <Y>24</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.Concept_Attributes</ClassName>
+      <DisplayName>Concept_Attributes</DisplayName>
+      <FileName>Concept_Attributes.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>390</X>
+        <Y>24</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -159,13 +207,6 @@
       <VisualTag>1</VisualTag>
     </Connection>
     <Connection>
-      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
-      <Target>SchemaBuilderPrototypingScreens.Footer</Target>
-      <Type>Composition</Type>
-      <TransitionType>None</TransitionType>
-      <VisualTag>1</VisualTag>
-    </Connection>
-    <Connection>
       <Source>SchemaBuilderPrototypingScreens.Welcome</Source>
       <Target>SchemaBuilderPrototypingScreens.Header</Target>
       <Type>Composition</Type>
@@ -203,13 +244,6 @@
     <Connection>
       <Source>SchemaBuilderPrototypingScreens.Header</Source>
       <Target>SchemaBuilderPrototypingScreens.Concept</Target>
-      <Type>Navigation</Type>
-      <TransitionType>None</TransitionType>
-      <VisualTag>0</VisualTag>
-    </Connection>
-    <Connection>
-      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
-      <Target>SchemaBuilderPrototypingScreens.Screen_1</Target>
       <Type>Navigation</Type>
       <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
@@ -305,6 +339,76 @@
       <TransitionType>None</TransitionType>
       <VisualTag>1</VisualTag>
     </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_bak3</Source>
+      <Target>SchemaBuilderPrototypingScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_bak3</Source>
+      <Target>SchemaBuilderPrototypingScreens.Footer</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_bak3</Source>
+      <Target>SchemaBuilderPrototypingScreens.VariableLinkControl</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
+      <Target>SchemaBuilderPrototypingScreens.Concept_Attributes</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.Concept_Synonyms</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Synonyms</Source>
+      <Target>SchemaBuilderPrototypingScreens.Relationship</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
+      <Target>SchemaBuilderPrototypingScreens.ConceptStepList</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.Concept</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Synonyms</Source>
+      <Target>SchemaBuilderPrototypingScreens.Concept_Attributes</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept</Source>
+      <Target>SchemaBuilderPrototypingScreens.Screen_1</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
   </Connections>
   <PrototypeRevision>0</PrototypeRevision>
   <BrandingText>Microsoft SketchFlow Prototype</BrandingText>
@@ -350,10 +454,10 @@
     </VisualTag>
   </VisualTags>
   <ViewState>
-    <Zoom>1</Zoom>
+    <Zoom>1.375</Zoom>
     <Center>
-      <X>282.62147677151711</X>
-      <Y>47.521739130434796</Y>
+      <X>341.48198649507003</X>
+      <Y>70.434233148633808</Y>
     </Center>
   </ViewState>
 </Data>

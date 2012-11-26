@@ -71,8 +71,20 @@
     <Compile Include="ConceptExtra.xaml.cs">
       <DependentUpon>ConceptExtra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConceptStepList.xaml.cs">
+      <DependentUpon>ConceptStepList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Concept_Attributes.xaml.cs">
+      <DependentUpon>Concept_Attributes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Concept_bak1.xaml.cs">
       <DependentUpon>Concept_bak1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Concept_bak3.xaml.cs">
+      <DependentUpon>Concept_bak3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Concept_Synonyms.xaml.cs">
+      <DependentUpon>Concept_Synonyms.xaml</DependentUpon>
     </Compile>
     <Compile Include="Copy_of_Concept_bak2.xaml.cs">
       <DependentUpon>Copy_of_Concept_bak2.xaml</DependentUpon>
@@ -109,7 +121,23 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ConceptStepList.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Concept_Attributes.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Concept_bak1.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Concept_bak3.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Concept_Synonyms.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -175,6 +203,7 @@
     <None Include="Feedback Files\BLUMeeting20121018.feedback" />
     <None Include="Feedback Files\BLUMeeting20121023.feedback" />
     <None Include="Feedback Files\BLUMeeting20121030.feedback" />
+    <None Include="Feedback Files\Melissa20121107.feedback" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

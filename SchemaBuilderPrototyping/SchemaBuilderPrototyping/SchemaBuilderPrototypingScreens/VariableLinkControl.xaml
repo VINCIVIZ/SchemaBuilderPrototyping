@@ -29,7 +29,7 @@
 	<Grid x:Name="LayoutRoot" Background="White">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="30"/>
-			<ColumnDefinition Width="150"/>
+			<ColumnDefinition Width="300"/>
 			<ColumnDefinition Width="150"/>
 		</Grid.ColumnDefinitions>
 		

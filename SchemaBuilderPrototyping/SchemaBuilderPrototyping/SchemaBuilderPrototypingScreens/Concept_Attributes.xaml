@@ -1,0 +1,109 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SchemaBuilderPrototypingScreens" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:System="clr-namespace:System;assembly=mscorlib"
+	x:Class="SchemaBuilderPrototypingScreens.Concept_Attributes"
+	Width="1250" Height="769" mc:Ignorable="d">
+
+	<Grid Background="White">
+		
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="SectionComboGroup">
+				<VisualState x:Name="SectionExtraVisible">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="autoCompleteBox">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True">
+			<i:Interaction.Triggers>
+				<i:EventTrigger>
+					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerCorrectedWorking"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</local:Header>
+		
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button x:Name="button" Style="{StaticResource Button-Sketch}" Margin="20" Content="Back">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Button>
+			<Button x:Name="button1" Style="{StaticResource Button-Sketch}" Margin="20" Content="Next">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept_Synonyms"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Button>
+			<Button x:Name="button2" Style="{StaticResource Button-Sketch}" Margin="20" Content="Finish"/>
+		</StackPanel>
+				
+		<StackPanel Grid.Row="1" Orientation="Vertical" Margin="20">
+		
+			<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Select Attributes" Margin="0,0,472,0"/>
+			<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable." Margin="0,0,472,0"/>
+			<Image x:Name="image" Source="Image1.png" Stretch="Fill" HorizontalAlignment="Left" Height="297" Width="606" Margin="20,0,0,0"/>			
+		
+			<StackPanel>
+				<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
+				<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
+				<StackPanel x:Name="stackPanel" Orientation="Vertical" Width="200" HorizontalAlignment="Left" >
+					<sdk:AutoCompleteBox x:Name="autoCompleteBox1" ItemsSource="{Binding Items}" Margin="20,20,0,0">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="LostFocus">
+								<i:Interaction.Behaviors>
+									<ei:ConditionBehavior>
+										<ei:ConditionalExpression>
+											<ei:ComparisonCondition LeftOperand="{Binding Text, ElementName=autoCompleteBox1}" Operator="NotEqual" RightOperand=""/>
+										</ei:ConditionalExpression>
+									</ei:ConditionBehavior>
+								</i:Interaction.Behaviors>
+								<pi:ActivateStateAction TargetState="SectionExtraVisible"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+						<sdk:AutoCompleteBox.DataContext>
+							<ItemsControl>
+								<System:String>Indication</System:String>
+								<System:String>History</System:String>
+								<System:String>Background</System:String>
+								<System:String>Procedure Description</System:String>
+								<System:String>Procedure Indication</System:String>
+								<System:String>Operation</System:String>
+							</ItemsControl>
+						</sdk:AutoCompleteBox.DataContext>
+					</sdk:AutoCompleteBox>
+					<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
+						<sdk:AutoCompleteBox.DataContext>
+							<ItemsControl>
+								<System:String>Indication</System:String>
+								<System:String>History</System:String>
+								<System:String>Background</System:String>
+								<System:String>Procedure Description</System:String>
+								<System:String>Procedure Indication</System:String>
+								<System:String>Operation</System:String>
+							</ItemsControl>
+						</sdk:AutoCompleteBox.DataContext>
+					</sdk:AutoCompleteBox>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+		
+	</Grid>
+	
+</UserControl>
