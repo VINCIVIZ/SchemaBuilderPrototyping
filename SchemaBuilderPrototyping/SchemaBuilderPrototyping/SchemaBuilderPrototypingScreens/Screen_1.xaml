@@ -12,6 +12,13 @@
 						<ColorAnimation Duration="0" To="#008D8D8D" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle" d:IsOptimized="True"/>
 						<ColorAnimation Duration="0" To="White" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle1" d:IsOptimized="True"/>
 						<ColorAnimation Duration="0" To="#FF8D8D8D" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle1" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="headeredItemsControl">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
 				<VisualState x:Name="PersonSel_Patient"/>
@@ -104,17 +111,31 @@
 					</RadioButton>
 				</sdk:HeaderedItemsControl>
 				
-				<sdk:HeaderedItemsControl Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" Header="Time of hospitalization" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
-					<StackPanel Orientation="Vertical" Margin="20,5,5,5">
-						<TextBlock Style="{StaticResource TextBlock-Sketch}" Margin="0,20,0,20">Select a date range</TextBlock>
-						<StackPanel Orientation="Horizontal">
-							<sdk:Calendar/>
-							<TextBlock Style="{StaticResource TextBlock-Sketch}" Margin="20,0,20,0" VerticalAlignment="Center">To</TextBlock>
-							<sdk:Calendar/>
-						</StackPanel>
-					</StackPanel>
-				</sdk:HeaderedItemsControl>
+				<StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2">
 				
+					<sdk:HeaderedItemsControl Header="Time of hospitalization" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+						<StackPanel Orientation="Vertical" Margin="20,5,5,5">
+							<TextBlock Style="{StaticResource TextBlock-Sketch}" Margin="0,20,0,20">Select a date range</TextBlock>
+							<StackPanel Orientation="Horizontal">
+								<sdk:Calendar/>
+								<TextBlock Style="{StaticResource TextBlock-Sketch}" Margin="20,0,20,0" VerticalAlignment="Center">To</TextBlock>
+								<sdk:Calendar/>
+							</StackPanel>
+						</StackPanel>
+					</sdk:HeaderedItemsControl>
+					
+					<sdk:HeaderedItemsControl x:Name="headeredItemsControl" Header="Relationship to Patient" Margin="0,20,0,0" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24" Visibility="Collapsed">
+						<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">Parent</RadioButton>
+						<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">Child</RadioButton>
+						<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">Sibling</RadioButton>
+						<RadioButton Name="customRelationshipRadioButton" Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Style="{StaticResource TextBlock-Sketch}" FontSize="20" VerticalAlignment="Center" Margin="5,0,5,0">Other</TextBlock>
+								<TextBox Style="{StaticResource TextBox-Sketch}" Width="150" Text="" GotFocus="RelationshipTextBox_GotFocus"/>
+							</StackPanel>
+						</RadioButton>
+					</sdk:HeaderedItemsControl>
+				</StackPanel>
 			</Grid>
 			
 			

@@ -1,0 +1,57 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SchemaBuilderPrototypingScreens" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+	xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.PhrasesDataSource"
+	x:Class="SchemaBuilderPrototypingScreens.SchemaView"
+	Width="1250" Height="720" mc:Ignorable="d">
+
+	<UserControl.Resources>
+		<SampleData:PhrasesDataSource x:Key="PhrasesDataSource" d:IsDataSource="True"/>
+	</UserControl.Resources>
+
+	<Grid Background="White" DataContext="{Binding Collection, Source={StaticResource PhrasesDataSource}}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True">
+			<i:Interaction.Triggers>
+				<i:EventTrigger>
+					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="SchemaView"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</local:Header>
+		
+		<sdk:DataGrid Grid.Row="2" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="5">
+			<sdk:DataGrid.Columns>
+				<sdk:DataGridTemplateColumn>
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<TextBlock Text="≡" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" ToolTipService.ToolTip="Drag to sort"/>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+				<sdk:DataGridTextColumn Header="Phrase" Binding="{Binding Phrase}"/>
+				<sdk:DataGridTemplateColumn>
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal">
+								<HyperlinkButton Margin="5,0" VerticalAlignment="Center">Edit</HyperlinkButton>
+								<HyperlinkButton Margin="5,0" VerticalAlignment="Center">Remove</HyperlinkButton>
+							</StackPanel>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+			</sdk:DataGrid.Columns>
+		</sdk:DataGrid>
+		
+		<HyperlinkButton Grid.Row="1" Margin="0,10" FontSize="20">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Welcome"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>New Phrase</HyperlinkButton>
+	</Grid>
+</UserControl>

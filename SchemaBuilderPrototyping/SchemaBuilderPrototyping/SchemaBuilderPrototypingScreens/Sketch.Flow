@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SchemaVersion="2">
   <SketchFlowGuid>07b0a227-128a-4325-a16b-d5e7819d3730</SketchFlowGuid>
-  <StartScreen>SchemaBuilderPrototypingScreens.Welcome</StartScreen>
+  <StartScreen>SchemaBuilderPrototypingScreens.SchemaList</StartScreen>
   <Screens>
     <Screen>
       <Type>Navigation</Type>
@@ -58,7 +58,7 @@
       <FileName>Footer.xaml</FileName>
       <Annotations />
       <Position>
-        <X>88</X>
+        <X>95</X>
         <Y>92</Y>
       </Position>
       <VisualTag>1</VisualTag>
@@ -180,6 +180,30 @@
       <Position>
         <X>390</X>
         <Y>24</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.SchemaView</ClassName>
+      <DisplayName>SchemaView</DisplayName>
+      <FileName>SchemaView.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-174</X>
+        <Y>25</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SchemaBuilderPrototypingScreens.SchemaList</ClassName>
+      <DisplayName>SchemaList</DisplayName>
+      <FileName>SchemaList.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-298</X>
+        <Y>28</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -364,21 +388,21 @@
       <Source>SchemaBuilderPrototypingScreens.Concept</Source>
       <Target>SchemaBuilderPrototypingScreens.Concept_Attributes</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
     <Connection>
       <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
       <Target>SchemaBuilderPrototypingScreens.Concept_Synonyms</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
     <Connection>
       <Source>SchemaBuilderPrototypingScreens.Concept_Synonyms</Source>
       <Target>SchemaBuilderPrototypingScreens.Relationship</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
     <Connection>
@@ -392,19 +416,103 @@
       <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
       <Target>SchemaBuilderPrototypingScreens.Concept</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
     <Connection>
       <Source>SchemaBuilderPrototypingScreens.Concept_Synonyms</Source>
       <Target>SchemaBuilderPrototypingScreens.Concept_Attributes</Target>
       <Type>Navigation</Type>
-      <TransitionType>Fade</TransitionType>
+      <TransitionType>None</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
     <Connection>
       <Source>SchemaBuilderPrototypingScreens.Concept</Source>
       <Target>SchemaBuilderPrototypingScreens.Screen_1</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.Finish</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.Screen_1</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.Footer</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Attributes</Source>
+      <Target>SchemaBuilderPrototypingScreens.ConceptStepList</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Concept_Synonyms</Source>
+      <Target>SchemaBuilderPrototypingScreens.ConceptStepList</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.SchemaView</Source>
+      <Target>SchemaBuilderPrototypingScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.SchemaView</Source>
+      <Target>SchemaBuilderPrototypingScreens.Welcome</Target>
+      <Type>Navigation</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.SchemaList</Source>
+      <Target>SchemaBuilderPrototypingScreens.SchemaView</Target>
+      <Type>Navigation</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.SchemaList</Source>
+      <Target>SchemaBuilderPrototypingScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Header</Source>
+      <Target>SchemaBuilderPrototypingScreens.SchemaList</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SchemaBuilderPrototypingScreens.Header</Source>
+      <Target>SchemaBuilderPrototypingScreens.SchemaView</Target>
       <Type>Navigation</Type>
       <TransitionType>Fade</TransitionType>
       <VisualTag>0</VisualTag>
@@ -456,8 +564,8 @@
   <ViewState>
     <Zoom>1.375</Zoom>
     <Center>
-      <X>341.48198649507003</X>
-      <Y>70.434233148633808</Y>
+      <X>146.52377183439725</X>
+      <Y>82.915933266697564</Y>
     </Center>
   </ViewState>
 </Data>

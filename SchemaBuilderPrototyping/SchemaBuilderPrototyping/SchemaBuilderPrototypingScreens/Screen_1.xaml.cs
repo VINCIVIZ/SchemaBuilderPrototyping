@@ -23,5 +23,10 @@ namespace SchemaBuilderPrototypingScreens
 			(sender as TextBox).SelectAll();
 			customAgeRadioButton.IsChecked = true;
 		}
+		
+		private void RelationshipTextBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+		{
+			customRelationshipRadioButton.IsChecked = true;
+		}
 	}
 }

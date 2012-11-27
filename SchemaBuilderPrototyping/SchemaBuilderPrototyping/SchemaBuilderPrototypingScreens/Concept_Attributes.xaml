@@ -54,56 +54,71 @@
 			<Button x:Name="button2" Style="{StaticResource Button-Sketch}" Margin="20" Content="Finish"/>
 		</StackPanel>
 				
-		<StackPanel Grid.Row="1" Orientation="Vertical" Margin="20">
+		<Grid Grid.Row="1" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
 		
-			<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Select Attributes" Margin="0,0,472,0"/>
-			<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable." Margin="0,0,472,0"/>
-			<Image x:Name="image" Source="Image1.png" Stretch="Fill" HorizontalAlignment="Left" Height="297" Width="606" Margin="20,0,0,0"/>			
-		
-			<StackPanel>
-				<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
-				<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
-				<StackPanel x:Name="stackPanel" Orientation="Vertical" Width="200" HorizontalAlignment="Left" >
-					<sdk:AutoCompleteBox x:Name="autoCompleteBox1" ItemsSource="{Binding Items}" Margin="20,20,0,0">
-						<i:Interaction.Triggers>
-							<i:EventTrigger EventName="LostFocus">
-								<i:Interaction.Behaviors>
-									<ei:ConditionBehavior>
-										<ei:ConditionalExpression>
-											<ei:ComparisonCondition LeftOperand="{Binding Text, ElementName=autoCompleteBox1}" Operator="NotEqual" RightOperand=""/>
-										</ei:ConditionalExpression>
-									</ei:ConditionBehavior>
-								</i:Interaction.Behaviors>
-								<pi:ActivateStateAction TargetState="SectionExtraVisible"/>
-							</i:EventTrigger>
-						</i:Interaction.Triggers>
-						<sdk:AutoCompleteBox.DataContext>
-							<ItemsControl>
-								<System:String>Indication</System:String>
-								<System:String>History</System:String>
-								<System:String>Background</System:String>
-								<System:String>Procedure Description</System:String>
-								<System:String>Procedure Indication</System:String>
-								<System:String>Operation</System:String>
-							</ItemsControl>
-						</sdk:AutoCompleteBox.DataContext>
-					</sdk:AutoCompleteBox>
-					<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
-						<sdk:AutoCompleteBox.DataContext>
-							<ItemsControl>
-								<System:String>Indication</System:String>
-								<System:String>History</System:String>
-								<System:String>Background</System:String>
-								<System:String>Procedure Description</System:String>
-								<System:String>Procedure Indication</System:String>
-								<System:String>Operation</System:String>
-							</ItemsControl>
-						</sdk:AutoCompleteBox.DataContext>
-					</sdk:AutoCompleteBox>
+			<local:ConceptStepList d:IsPrototypingComposition="True">
+				<i:Interaction.Triggers>
+					<i:EventTrigger>
+						<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.ConceptStepList" TargetState="Highlight2"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</local:ConceptStepList>		
+					
+			<StackPanel Grid.Column="1" Orientation="Vertical" Margin="20">
+			
+				<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Select Attributes" Margin="0,0,472,0"/>
+				<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select an information you would like to capture about this variable." Margin="0,0,472,0"/>
+				<Image x:Name="image" Source="Image1.png" Stretch="Fill" HorizontalAlignment="Left" Height="297" Width="606" Margin="20,0,0,0"/>			
+			
+				<StackPanel>
+					<TextBlock x:Name="sectionTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Section Filter"/>
+					<TextBlock x:Name="sectionMsgTextBlock" Style="{StaticResource BasicTextBlock-Sketch}" Text="Select sections fron which the variable will be searched."/>
+					<StackPanel x:Name="stackPanel" Orientation="Vertical" Width="200" HorizontalAlignment="Left" >
+						<sdk:AutoCompleteBox x:Name="autoCompleteBox1" ItemsSource="{Binding Items}" Margin="20,20,0,0">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="LostFocus">
+									<i:Interaction.Behaviors>
+										<ei:ConditionBehavior>
+											<ei:ConditionalExpression>
+												<ei:ComparisonCondition LeftOperand="{Binding Text, ElementName=autoCompleteBox1}" Operator="NotEqual" RightOperand=""/>
+											</ei:ConditionalExpression>
+										</ei:ConditionBehavior>
+									</i:Interaction.Behaviors>
+									<pi:ActivateStateAction TargetState="SectionExtraVisible"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+							<sdk:AutoCompleteBox.DataContext>
+								<ItemsControl>
+									<System:String>Indication</System:String>
+									<System:String>History</System:String>
+									<System:String>Background</System:String>
+									<System:String>Procedure Description</System:String>
+									<System:String>Procedure Indication</System:String>
+									<System:String>Operation</System:String>
+								</ItemsControl>
+							</sdk:AutoCompleteBox.DataContext>
+						</sdk:AutoCompleteBox>
+						<sdk:AutoCompleteBox x:Name="autoCompleteBox"  Margin="20,20,0,0" ItemsSource="{Binding Items}" Visibility="Collapsed">
+							<sdk:AutoCompleteBox.DataContext>
+								<ItemsControl>
+									<System:String>Indication</System:String>
+									<System:String>History</System:String>
+									<System:String>Background</System:String>
+									<System:String>Procedure Description</System:String>
+									<System:String>Procedure Indication</System:String>
+									<System:String>Operation</System:String>
+								</ItemsControl>
+							</sdk:AutoCompleteBox.DataContext>
+						</sdk:AutoCompleteBox>
+					</StackPanel>
 				</StackPanel>
 			</StackPanel>
-		</StackPanel>
-		
+		</Grid>
 	</Grid>
+
 	
 </UserControl>

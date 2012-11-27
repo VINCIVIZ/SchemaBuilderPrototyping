@@ -18,7 +18,7 @@
 			</i:Interaction.Triggers>
 		</local:Header>
 	
-	<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button x:Name="button" Style="{StaticResource Button-Sketch}" Margin="20" Content="Back">
 				<i:Interaction.Triggers>
 					<i:EventTrigger EventName="Click">
@@ -36,6 +36,20 @@
 			<Button x:Name="button2" Style="{StaticResource Button-Sketch}" Margin="20" Content="Finish"/>
 		</StackPanel>				
 		
+		<Grid Grid.Row="1" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+		
+			<local:ConceptStepList d:IsPrototypingComposition="True">
+				<i:Interaction.Triggers>
+					<i:EventTrigger>
+						<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.ConceptStepList" TargetState="Highlight3"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</local:ConceptStepList>	
+		</Grid>
 	</Grid>
 	
 </UserControl>

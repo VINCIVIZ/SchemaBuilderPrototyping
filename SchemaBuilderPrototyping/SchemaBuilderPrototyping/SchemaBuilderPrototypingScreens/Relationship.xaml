@@ -102,9 +102,10 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
 			</Grid.RowDefinitions>
 			
-			<sdk:HeaderedItemsControl Grid.Column="0" Grid.Row="0" Header="Temporal" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+			<sdk:HeaderedItemsControl Name="temporalGroup" Grid.Column="0" Grid.Row="0" Header="Temporal" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
 				<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}" IsChecked="True" Content="Past">
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Checked">
@@ -128,14 +129,14 @@
 				</RadioButton>
 			</sdk:HeaderedItemsControl>
 			
-			<sdk:HeaderedItemsControl Grid.Column="0" Grid.Row="1" Margin="0,30,0,0" Header="Degree of certainty" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+			<sdk:HeaderedItemsControl Name="certaintyGroup" Grid.Column="0" Grid.Row="1" Margin="0,30,0,0" Header="Degree of certainty" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
 				<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}" IsChecked="True" Content="Asserted" ToolTipService.ToolTip="(Tooltip for this NLP term.)"/>
 				<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}" Content="Negated" ToolTipService.ToolTip="(Tooltip for this NLP term.)"/>
 				<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}" Content="Uncertain" ToolTipService.ToolTip="(Tooltip for this NLP term.)"/>
 				<RadioButton Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}" Content="Recommended" ToolTipService.ToolTip="(Tooltip for this NLP term.)"/>
 			</sdk:HeaderedItemsControl>
 			
-			<sdk:HeaderedItemsControl Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center" Header="Relationship Descriptor" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+			<sdk:HeaderedItemsControl Name="descGroup" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center" Header="Relationship Descriptor" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
 				<RadioButton x:Name="radioButton" Margin="20,5,5,5" Style="{StaticResource RadioButton-Sketch}" IsChecked="True" Content="had history of">
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Checked">
@@ -161,7 +162,12 @@
 			
 			<ed:BlockArrow Fill="#FFF4F4F5" Grid.Column="1" Grid.RowSpan="2" Margin="50,0,50,0" HorizontalAlignment="Center" Height="62.5" Orientation="Right" Stroke="Black" UseLayoutRounding="False" VerticalAlignment="Center" Width="100"/>
 			
+			<sdk:HeaderedItemsControl Grid.Row="2" Grid.ColumnSpan="3" Header="Or input your own descriptor" Margin="0,30,0,0" FontFamily="/SchemaBuilderPrototyping.Screens;component/Fonts/BuxtonSketch.ttf#Buxton Sketch" FontSize="24">
+				<TextBox Name="customTextBox" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" HorizontalAlignment="Left" Width="500" Margin="10,5,0,0" TextChanged="TextBox_TextChanged"/>
+			</sdk:HeaderedItemsControl>
+			
 		</Grid>
+		
 						
 	</Grid>
 	

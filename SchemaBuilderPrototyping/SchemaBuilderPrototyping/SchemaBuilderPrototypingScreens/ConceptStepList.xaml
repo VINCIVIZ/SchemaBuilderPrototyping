@@ -27,9 +27,10 @@
 				</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
 		<StackPanel Background="White" Margin="0,0,10,0">
-			<TextBlock x:Name="textBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="1. Definition" Margin="5"/>
-			<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="2. Attributes" Margin="5"/>
-			<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="3. Synonyms" Margin="5"/>
+			<TextBlock x:Name="conceptTitle" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="Concept Builder" Margin="5"/>
+			<TextBlock x:Name="textBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="1. Definition" Margin="10,5"/>
+			<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="2. Attributes" Margin="10,5"/>
+			<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="3. Synonyms" Margin="10,5"/>
 		</StackPanel>
 	</Border>
 </UserControl>
