@@ -1,9 +1,14 @@
 ﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SchemaBuilderPrototypingScreens" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
 	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SynonymSampleData"
 	x:Class="SchemaBuilderPrototypingScreens.Concept_Synonyms"
 	Width="1250" Height="720" mc:Ignorable="d">
 
-	<Grid Background="White">
+	<UserControl.Resources>
+		<SampleData:SynonymSampleData x:Key="SynonymSampleData" d:IsDataSource="True"/>
+	</UserControl.Resources>
+
+	<Grid Background="White" DataContext="{Binding Collection, Source={StaticResource SynonymSampleData}}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
@@ -49,6 +54,22 @@
 					</i:EventTrigger>
 				</i:Interaction.Triggers>
 			</local:ConceptStepList>	
+			
+			<StackPanel Orientation="Vertical" Grid.Column="1">
+				<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Select Synonyms"/>
+				<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Left">
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Filter" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="20"/>
+					<TextBox Style="{StaticResource BasicTextBox-Sketch}" Width="200"/>
+				</StackPanel>
+				<sdk:DataGrid Name="dataGrid" AutoGenerateColumns="False" VerticalAlignment="Stretch" ItemsSource="{Binding}" Margin="20,0">
+					<sdk:DataGrid.Columns>
+						<sdk:DataGridCheckBoxColumn Binding="{Binding Checked}" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+						<sdk:DataGridTextColumn Binding="{Binding Synonym}" Header="Synonym" CanUserReorder="False" CanUserResize="False" CanUserSort="False" IsReadOnly="True"/>
+						<sdk:DataGridTextColumn Binding="{Binding Source}" Header="Source" CanUserReorder="False" CanUserResize="False" CanUserSort="False" IsReadOnly="True"/>
+						<sdk:DataGridTextColumn Binding="{Binding URL}" Header="URL" CanUserResize="False" CanUserSort="False" IsReadOnly="True" CanUserReorder="False"/>
+					</sdk:DataGrid.Columns>
+				</sdk:DataGrid>
+			</StackPanel>
 		</Grid>
 	</Grid>
 	

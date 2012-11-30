@@ -114,6 +114,9 @@
     <Compile Include="SampleData\SchemaListSource\SchemaListSource.xaml.cs">
       <DependentUpon>SchemaListSource.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SampleData\SynonymSampleData\SynonymSampleData.xaml.cs">
+      <DependentUpon>SynonymSampleData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SchemaList.xaml.cs">
       <DependentUpon>SchemaList.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SampleData\SynonymSampleData\SynonymSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SchemaList.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
@@ -238,6 +245,7 @@
     <None Include="Feedback Files\Melissa20121107.feedback" />
     <DesignTimeOnly Include="SampleData\PhrasesDataSource\PhrasesDataSource.xsd" />
     <DesignTimeOnly Include="SampleData\SchemaListSource\SchemaListSource.xsd" />
+    <DesignTimeOnly Include="SampleData\SynonymSampleData\SynonymSampleData.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

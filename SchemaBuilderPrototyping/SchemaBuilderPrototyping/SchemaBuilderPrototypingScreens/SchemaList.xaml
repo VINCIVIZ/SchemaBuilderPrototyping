@@ -24,7 +24,7 @@
 			</i:Interaction.Triggers>
 		</local:Header>
 		
-		<sdk:DataGrid Grid.Row="2" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="5">
+		<sdk:DataGrid Grid.Row="2" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="5" IsReadOnly="True">
 			<sdk:DataGrid.Columns>
 				<sdk:DataGridTextColumn Header="Author" Binding="{Binding Author}"/>
 				<sdk:DataGridTextColumn Header="Title" Binding="{Binding Name}"/>
