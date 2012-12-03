@@ -174,46 +174,22 @@
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="hyperlinkButton2">
+						
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="CertaintyAdded">
+				<VisualState x:Name="CertaintyHidden"/>
+				<VisualState x:Name="CertaintyShown">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="certaintyButton">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
 									<Visibility>Collapsed</Visibility>
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
-			<VisualStateGroup x:Name="QuantDefBoxState">
-				<VisualState x:Name="QuantMouseClicked">
-					<Storyboard>
-						<ColorAnimation Duration="0" To="Black" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="quantDefBox" d:IsOptimized="True"/>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(AutoCompleteBox.Text)" Storyboard.TargetName="quantDefBox">
-							<DiscreteObjectKeyFrame KeyTime="0" Value=""/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="QuantShowingHint">
-					<Storyboard>
-						<ColorAnimation Duration="0" To="Gray" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="quantDefBox" d:IsOptimized="True"/>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(AutoCompleteBox.Text)" Storyboard.TargetName="quantDefBox">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="(Enter Variable Name)"/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
-			<VisualStateGroup x:Name="QuantDefValueState">
-				<VisualState x:Name="QuantNoRange"/>
-				<VisualState x:Name="QuantInRange">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle3">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Visible</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBox3">
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="certaintyCombo">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
 									<Visibility>Visible</Visibility>
@@ -223,23 +199,48 @@
 					</Storyboard>
 				</VisualState>
 			</VisualStateGroup>
-			<VisualStateGroup x:Name="QuantVisibility">
-				<VisualState x:Name="QuantCollapsed"/>
-				<VisualState x:Name="QuantVisible">
+			<VisualStateGroup x:Name="TemporalAdded">
+				<VisualState x:Name="TemporalHidden"/>
+				<VisualState x:Name="TemporalShown">
 					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="quantDefStackPanel">
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="temporalButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="temporalCombo">
 							<DiscreteObjectKeyFrame KeyTime="0">
 								<DiscreteObjectKeyFrame.Value>
 									<Visibility>Visible</Visibility>
 								</DiscreteObjectKeyFrame.Value>
 							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="hyperlinkButton1">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="Remove Quantitative Definition"/>
-						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
 			</VisualStateGroup>
+			<VisualStateGroup x:Name="ExperiencerAdded">
+				<VisualState x:Name="ExperiencerHidden"/>
+				<VisualState x:Name="ExperiencerShown">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="experiencerButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="experiencerCombo">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>	
 		</VisualStateManager.VisualStateGroups>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -247,13 +248,40 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.SchemaList"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers><Run Text="Schema Builder"/></TextBlock>
+			<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,10">
+				<HyperlinkButton FontSize="23">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="Click">
+							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.SchemaView"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>MySchema_1 - </HyperlinkButton>
+				<TextBlock x:Name="titleTemporal" Style="{StaticResource BasicTextBlock-Sketch}" Text="" FontSize="28" Margin="5,0"/>
+				<TextBlock x:Name="titleVarName" Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="28" Margin="5,0"/>
+				<TextBlock x:Name="titleCertainty" Style="{StaticResource BasicTextBlock-Sketch}" Text="" FontSize="28" Margin="5,0"/>
+				<TextBlock x:Name="titleExperiencer" Style="{StaticResource BasicTextBlock-Sketch}" Text="" FontSize="28" Margin="5,0"/>
+			</StackPanel>	
+			<Rectangle Height="5" Grid.Row="2" Fill="Black"/>
+		</Grid>
+		
+		<!--<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True">
 			<i:Interaction.Triggers>
 				<i:EventTrigger>
-					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ConceptWorking"/>
+					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="SchemaList"/>
 				</i:EventTrigger>
 			</i:Interaction.Triggers>
-		</local:Header>
+		</local:Header>-->
 		
 		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button x:Name="button" Style="{StaticResource Button-Sketch}" Margin="20" Content="Back">
@@ -295,18 +323,133 @@
 					</Grid.ColumnDefinitions>		
 									
 					<StackPanel Grid.Column="1" Margin="10,10">
-						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Enter a variable name (Text pending)"/>
+						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Variable Name"/>
 						<StackPanel Orientation="Horizontal" Margin="5,10">
-							<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" Width="300" Margin="20,0"/>
-							<Button Content="Submit" Style="{StaticResource Button-Sketch}" Width="75">
+							<Button x:Name="certaintyButton" Content="C" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add certainty decorator" Margin="10,0" Opacity="0.5">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="MouseEnter">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="MouseLeave">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="0.5" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="Click">
+										<pi:ActivateStateAction TargetState="CertaintyShown"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=certaintyCombo}" PropertyName="SelectedIndex"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=certaintyCombo}"/>
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+							</Button>
+							<ComboBox x:Name="certaintyCombo" Style="{StaticResource ComboBox-Sketch}" Margin="10,0" Visibility="Collapsed" SelectedIndex="0">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="SelectionChanged">
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=certaintyCombo}"/>
+									</i:EventTrigger>									
+									<i:EventTrigger EventName="SelectionChanged">
+										<i:Interaction.Behaviors>
+											<ei:ConditionBehavior>
+												<ei:ConditionalExpression>
+													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=certaintyCombo}" RightOperand="3"/>
+												</ei:ConditionalExpression>
+											</ei:ConditionBehavior>
+										</i:Interaction.Behaviors>
+										<pi:ActivateStateAction TargetState="CertaintyHidden"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value=""/>
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+								<ComboBoxItem Content="Possible" IsSelected="True"/>
+								<ComboBoxItem Content="Proposed"/>
+								<ComboBoxItem Content="No" ToolTipService.ToolTip="Negated certainty (text pending)"/>
+								<ComboBoxItem Content="Remove Certainty" Foreground="Red" ToolTipService.ToolTip="Remove the certainty decorator; means 'actual' (text pending)"/>
+							</ComboBox>
+							<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" MinWidth="100" Margin="10,0">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="LostFocus">
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleVarName}" PropertyName="Text" Value="{Binding Text, ElementName=textBox}"/>
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+							</TextBox>
+							<Button x:Name="temporalButton" Content="T" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add temporality decorator" Margin="10,0" Opacity="0.5">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="MouseEnter">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="MouseLeave">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="0.5" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="Click">
+										<pi:ActivateStateAction TargetState="TemporalShown"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=temporalCombo}" PropertyName="SelectedIndex"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=temporalCombo}"/>
+									</i:EventTrigger>									
+								</i:Interaction.Triggers>
+							</Button>
+							<ComboBox x:Name="temporalCombo" Style="{StaticResource ComboBox-Sketch}" Margin="10,0" Visibility="Collapsed" SelectedIndex="0">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="SelectionChanged">
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=temporalCombo}"/>
+									</i:EventTrigger>										
+									<i:EventTrigger EventName="SelectionChanged">
+										<i:Interaction.Behaviors>
+											<ei:ConditionBehavior>
+												<ei:ConditionalExpression>
+													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=temporalCombo}" RightOperand="2"/>
+												</ei:ConditionalExpression>
+											</ei:ConditionBehavior>
+										</i:Interaction.Behaviors>
+										<pi:ActivateStateAction TargetState="TemporalHidden"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value=""/>
+									</i:EventTrigger>								
+								</i:Interaction.Triggers>								
+								<ComboBoxItem Content="in the past" IsSelected="True"/>
+								<ComboBoxItem Content="in the future"/>
+								<ComboBoxItem Content="Remove Temporality" Foreground="Red" ToolTipService.ToolTip="Remove the temporality decorator; means 'current' (text pending)" />
+							</ComboBox>
+							<Button x:Name="experiencerButton" Content="E" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add experiencer decorator" Margin="10,0" Opacity="0.5">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="MouseEnter">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="MouseLeave">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="0.5" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="Click">
+										<pi:ActivateStateAction TargetState="ExperiencerShown"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=experiencerCombo}" PropertyName="SelectedIndex"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=experiencerCombo}"/>										
+									</i:EventTrigger>									
+								</i:Interaction.Triggers>
+							</Button>
+							<ComboBox x:Name="experiencerCombo" Style="{StaticResource ComboBox-Sketch}" Margin="10,0" Visibility="Collapsed" SelectedIndex="0">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="SelectionChanged">
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=experiencerCombo}"/>
+									</i:EventTrigger>										
+									<i:EventTrigger EventName="SelectionChanged">
+										<i:Interaction.Behaviors>
+											<ei:ConditionBehavior>
+												<ei:ConditionalExpression>
+													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=experiencerCombo}" RightOperand="1"/>
+												</ei:ConditionalExpression>
+											</ei:ConditionBehavior>
+										</i:Interaction.Behaviors>
+										<pi:ActivateStateAction TargetState="ExperiencerHidden"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Text" Value=""/>
+									</i:EventTrigger>								
+								</i:Interaction.Triggers>								
+								<ComboBoxItem Content="in family members" IsSelected="True"/>
+								<ComboBoxItem Content="Remove Experiencer" Foreground="Red" ToolTipService.ToolTip="Remove the experiencer decorator, means 'with patient' (text pending)"/>
+							</ComboBox>
+							
+						</StackPanel>
+						<Button Content="Submit" Style="{StaticResource Button-Sketch}" Width="75">
 								<i:Interaction.Triggers>
 									<i:EventTrigger EventName="Click">
 										<pi:ActivateStateAction TargetState="VarNameSubmitted"/>
 										<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerWorking"/>
 									</i:EventTrigger>
 								</i:Interaction.Triggers>
-							</Button>
-						</StackPanel>
+						</Button>
 						
 						<Rectangle x:Name="rectangle1" HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
 						
@@ -393,111 +536,6 @@
 						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
 						<TextBox x:Name="textBox1" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Text="Colon, or colorectal, cancer is cancer that starts in the large intenstine (colon) or the rectum (end of the colon)." Height="100" VerticalScrollBarVisibility="Auto"/>		
 						
-						
-						<StackPanel x:Name="quantDefStackPanel" Orientation="Vertical" Margin="10,5" Visibility="Collapsed">
-							<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Quantitative Definition" Margin="0,5"/>
-							<sdk:AutoCompleteBox x:Name="quantDefBox" ItemsSource="{Binding Items}" Text="(Enter Variable Name)" Foreground="Gray">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="GotFocus">
-										<i:Interaction.Behaviors>
-											<ei:ConditionBehavior>
-												<ei:ConditionalExpression>
-													<ei:ComparisonCondition RightOperand="(Enter Variable Name)" LeftOperand="{Binding Text, ElementName=quantDefBox}"/>
-												</ei:ConditionalExpression>
-											</ei:ConditionBehavior>
-										</i:Interaction.Behaviors>
-										<pi:ActivateStateAction TargetState="QuantMouseClicked"/>
-									</i:EventTrigger>
-									<i:EventTrigger EventName="LostFocus">
-										<i:Interaction.Behaviors>
-											<ei:ConditionBehavior>
-												<ei:ConditionalExpression>
-													<ei:ComparisonCondition LeftOperand="{Binding Text, ElementName=quantDefBox}" RightOperand=""/>
-												</ei:ConditionalExpression>
-											</ei:ConditionBehavior>
-										</i:Interaction.Behaviors>
-										<pi:ActivateStateAction TargetState="QuantShowingHint"/>
-									</i:EventTrigger>
-								</i:Interaction.Triggers>
-								<sdk:AutoCompleteBox.DataContext>
-											<ItemsControl>
-												<System:String>Age</System:String>
-												<System:String>Temperature</System:String>
-												<System:String>Weight</System:String>
-												<System:String>Height</System:String>
-											</ItemsControl>
-										</sdk:AutoCompleteBox.DataContext>
-							</sdk:AutoCompleteBox>
-							<ComboBox x:Name="quantComboBox" HorizontalAlignment="Left" Width="100" Margin="20,5">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="SelectionChanged">
-										<i:Interaction.Behaviors>
-											<ei:ConditionBehavior>
-												<ei:ConditionalExpression>
-													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=quantComboBox}" RightOperand="5"/>
-												</ei:ConditionalExpression>
-											</ei:ConditionBehavior>
-										</i:Interaction.Behaviors>
-										<pi:ActivateStateAction TargetState="QuantInRange"/>
-									</i:EventTrigger>
-									<i:EventTrigger EventName="SelectionChanged">
-										<i:Interaction.Behaviors>
-											<ei:ConditionBehavior>
-												<ei:ConditionalExpression>
-													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=quantComboBox}" Operator="NotEqual" RightOperand="5"/>
-												</ei:ConditionalExpression>
-											</ei:ConditionBehavior>
-										</i:Interaction.Behaviors>
-										<pi:ActivateStateAction TargetState="QuantNoRange"/>
-									</i:EventTrigger>
-								</i:Interaction.Triggers>
-								<ComboBoxItem Content="Less than"/>
-								<ComboBoxItem Content="Less or equal to"/>
-								<ComboBoxItem Content="Equal to" IsSelected="True"/>
-								<ComboBoxItem Content="Greater or equal to"/>
-								<ComboBoxItem Content="Greater than"/>
-								<ComboBoxItem Content="In range of"/>
-							</ComboBox>
-							
-							<Grid>
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="*"/>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="*"/>
-								</Grid.ColumnDefinitions>
-								
-								<TextBox x:Name="textBox4" Style="{StaticResource BasicTextBox-Sketch}" Margin="10,0"/>
-								<Rectangle x:Name="rectangle3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="2" Fill="Black" Grid.Column="1" Visibility="Collapsed"/>
-								<TextBox x:Name="textBox3" Style="{StaticResource BasicTextBox-Sketch}" Margin="10,0" Grid.Column="2" Visibility="Collapsed"/>
-							</Grid>
-						</StackPanel>
-						
-						<HyperlinkButton x:Name="hyperlinkButton1" Margin="10, 5" Content="Add Quantitative Definition">
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Click">
-									<i:Interaction.Behaviors>
-										<ei:ConditionBehavior>
-											<ei:ConditionalExpression>
-												<ei:ComparisonCondition LeftOperand="{Binding Visibility, ElementName=quantDefStackPanel}" RightOperand="Collapsed"/>
-											</ei:ConditionalExpression>
-										</ei:ConditionBehavior>
-									</i:Interaction.Behaviors>
-									<pi:ActivateStateAction TargetState="QuantVisible"/>
-								</i:EventTrigger>
-								<!--<i:EventTrigger EventName="Click">
-									<i:Interaction.Behaviors>
-										<ei:ConditionBehavior>
-											<ei:ConditionalExpression>
-												<ei:ComparisonCondition LeftOperand="{Binding Visibility, ElementName=quantDefStackPanel}" RightOperand="Visible"/>
-											</ei:ConditionalExpression>
-										</ei:ConditionBehavior>
-									</i:Interaction.Behaviors>
-									<pi:ActivateStateAction TargetState="QuantCollapsed"/>
-								</i:EventTrigger>-->
-							</i:Interaction.Triggers>
-						</HyperlinkButton>
-
-						
 						<Rectangle HorizontalAlignment="Stretch" Height="1" Fill="Black" Margin="0,20"/>
 						
 						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" Text="Colon Cancer (UMLS)" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
@@ -569,7 +607,6 @@
 						<TextBlock x:Name="textBlock4" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Build your definition"/>
 						<TextBlock x:Name="textBlock3" Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="24" TextDecorations="Underline" Margin="10,5"/>
 						<TextBox x:Name="textBox2" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Margin="10,5" Height="100" VerticalScrollBarVisibility="Auto"/>		
-						<HyperlinkButton x:Name="hyperlinkButton2" Margin="10, 5">Add Quantitative Definition</HyperlinkButton>
 					</StackPanel>
 						
 					</StackPanel>

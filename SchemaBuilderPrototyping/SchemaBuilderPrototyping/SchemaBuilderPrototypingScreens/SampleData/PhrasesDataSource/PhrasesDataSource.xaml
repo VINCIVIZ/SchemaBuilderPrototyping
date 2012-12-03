@@ -5,10 +5,10 @@
 -->
 <SampleData:PhrasesDataSource xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.PhrasesDataSource" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
   <SampleData:PhrasesDataSource.Collection>
-    <SampleData:Item Phrase="Patient underwent Colon Cancer." />
-    <SampleData:Item Phrase="Integer mauris praesent" />
-    <SampleData:Item Phrase="Cras accumsan quisque nullam" />
-    <SampleData:Item Phrase="Vivamus aliquam" />
-    <SampleData:Item Phrase="Aliquet duis nam blandit" />
+    <SampleData:Item Variable="Patient underwent Colon Cancer." Type="Disease" />
+    <SampleData:Item Variable="Integer mauris praesent" Type="Disease" />
+    <SampleData:Item Variable="Cras accumsan quisque nullam" Type="Disease" />
+    <SampleData:Item Variable="Vivamus aliquam" Type="Patient" />
+    <SampleData:Item Variable="Aliquet duis nam blandit" Type="Patient" />
   </SampleData:PhrasesDataSource.Collection>
 </SampleData:PhrasesDataSource>

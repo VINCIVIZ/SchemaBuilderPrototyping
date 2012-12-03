@@ -3,6 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
 	mc:Ignorable="d"
 	x:Class="SchemaBuilderPrototypingScreens.ConceptStepList">
 
@@ -28,9 +29,27 @@
 			</VisualStateManager.VisualStateGroups>
 		<StackPanel Background="White" Margin="0,0,10,0">
 			<TextBlock x:Name="conceptTitle" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="Concept Builder" Margin="5"/>
-			<TextBlock x:Name="textBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="1. Definition" Margin="10,5"/>
-			<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="2. Attributes" Margin="10,5"/>
-			<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="3. Synonyms" Margin="10,5"/>
+			<TextBlock x:Name="textBlock" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="1. Definition" Margin="10,5" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</TextBlock>
+			<TextBlock x:Name="textBlock1" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="2. Attributes" Margin="10,5" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept_Attributes"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</TextBlock>
+			<TextBlock x:Name="textBlock2" Style="{StaticResource BasicTextBlock-Sketch}" FontSize="20" Text="3. Synonyms" Margin="10,5" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.Concept_Synonyms"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</TextBlock>
 		</StackPanel>
 	</Border>
 </UserControl>

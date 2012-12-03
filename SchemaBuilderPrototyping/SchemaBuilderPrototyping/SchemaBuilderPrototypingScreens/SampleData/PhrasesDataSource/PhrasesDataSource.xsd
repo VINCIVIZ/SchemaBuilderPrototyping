@@ -17,6 +17,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Item">
-    <xs:attribute name="Phrase" type="xs:string" />
+    <xs:attribute name="Variable" type="xs:string" />
+    <xs:attribute blend:Format="Name" name="Type" type="xs:string" />
   </xs:complexType>
 </xs:schema>

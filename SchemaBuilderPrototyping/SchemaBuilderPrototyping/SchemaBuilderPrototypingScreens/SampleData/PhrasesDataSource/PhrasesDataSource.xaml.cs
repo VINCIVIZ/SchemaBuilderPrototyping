@@ -49,6 +49,10 @@ namespace Expression.Blend.SampleData.PhrasesDataSource
 		}
 	}
 
+	public class ItemCollection : System.Collections.ObjectModel.ObservableCollection<Item>
+	{ 
+	}
+
 	public class Item : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -61,28 +65,43 @@ namespace Expression.Blend.SampleData.PhrasesDataSource
 			}
 		}
 
-		private string _Phrase = string.Empty;
+		private string _Variable = string.Empty;
 
-		public string Phrase
+		public string Variable
 		{
 			get
 			{
-				return this._Phrase;
+				return this._Variable;
 			}
 
 			set
 			{
-				if (this._Phrase != value)
+				if (this._Variable != value)
 				{
-					this._Phrase = value;
-					this.OnPropertyChanged("Phrase");
+					this._Variable = value;
+					this.OnPropertyChanged("Variable");
 				}
 			}
 		}
-	}
 
-	public class ItemCollection : System.Collections.ObjectModel.ObservableCollection<Item>
-	{ 
+		private string _Type = string.Empty;
+
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+
+			set
+			{
+				if (this._Type != value)
+				{
+					this._Type = value;
+					this.OnPropertyChanged("Type");
+				}
+			}
+		}
 	}
 #endif
 }

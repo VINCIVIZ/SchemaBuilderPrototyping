@@ -15,13 +15,29 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 		
-		<local:Header Width="Auto" d:LayoutOverrides="Height" d:IsPrototypingComposition="True">
-			<i:Interaction.Triggers>
-				<i:EventTrigger>
-					<pi:ActivateStateAction TargetScreen="SchemaBuilderPrototypingScreens.Header" TargetState="ColonCancerCorrectedWorking"/>
-				</i:EventTrigger>
-			</i:Interaction.Triggers>
-		</local:Header>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" HorizontalAlignment="Left" Margin="5" FontSize="32" FontWeight="Bold" Cursor="Hand">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseLeftButtonDown">
+						<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.SchemaList"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers><Run Text="Schema Builder"/></TextBlock>
+			<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,10">
+				<HyperlinkButton FontSize="23">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="Click">
+							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.SchemaView"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>MySchema_1 - </HyperlinkButton>
+				<TextBlock x:Name="titleVarName" Style="{StaticResource BasicTextBlock-Sketch}" Text="Possible ColonCancer in the past" FontSize="28" Margin="5,0"/>
+			</StackPanel>	
+			<Rectangle Height="5" Grid.Row="2" Fill="Black"/>
+		</Grid>
 	
 		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button x:Name="button" Style="{StaticResource Button-Sketch}" Margin="20" Content="Back">
