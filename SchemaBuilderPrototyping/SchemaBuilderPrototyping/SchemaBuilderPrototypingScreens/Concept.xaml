@@ -267,10 +267,10 @@
 							<pi:NavigateToScreenAction TargetScreen="SchemaBuilderPrototypingScreens.SchemaView"/>
 						</i:EventTrigger>
 					</i:Interaction.Triggers>MySchema_1 - </HyperlinkButton>
-				<TextBlock x:Name="titleTemporal" Style="{StaticResource BasicTextBlock-Sketch}" Text="" FontSize="28" Margin="5,0"/>
+				<TextBlock x:Name="titleCertainty" Style="{StaticResource BasicTextBlock-Sketch}" Text="C" FontSize="28" Margin="5,0" Visibility="Collapsed"/>
+				<TextBlock x:Name="titleTemporal" Style="{StaticResource BasicTextBlock-Sketch}" Text="T" FontSize="28" Margin="5,0" Visibility="Collapsed"/>
+				<TextBlock x:Name="titleExperiencer" Style="{StaticResource BasicTextBlock-Sketch}" Text="E" FontSize="28" Margin="5,0" Visibility="Collapsed"/>	
 				<TextBlock x:Name="titleVarName" Style="{StaticResource BasicTextBlock-Sketch}" Text="ColonCancer" FontSize="28" Margin="5,0"/>
-				<TextBlock x:Name="titleCertainty" Style="{StaticResource BasicTextBlock-Sketch}" Text="" FontSize="28" Margin="5,0"/>
-				<TextBlock x:Name="titleExperiencer" Style="{StaticResource BasicTextBlock-Sketch}" Text="" FontSize="28" Margin="5,0"/>
 			</StackPanel>	
 			<Rectangle Height="5" Grid.Row="2" Fill="Black"/>
 		</Grid>
@@ -325,7 +325,7 @@
 					<StackPanel Grid.Column="1" Margin="10,10">
 						<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" FontSize="32" Text="Variable Name"/>
 						<StackPanel Orientation="Horizontal" Margin="5,10">
-							<Button x:Name="certaintyButton" Content="C" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add certainty decorator" Margin="10,0" Opacity="0.5">
+							<Button x:Name="certaintyButton" Content="C" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add certainty modifier" Margin="10,0" Opacity="0.5">
 								<i:Interaction.Triggers>
 									<i:EventTrigger EventName="MouseEnter">
 										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
@@ -336,14 +336,16 @@
 									<i:EventTrigger EventName="Click">
 										<pi:ActivateStateAction TargetState="CertaintyShown"/>
 										<ei:ChangePropertyAction TargetObject="{Binding ElementName=certaintyCombo}" PropertyName="SelectedIndex"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=certaintyCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=certaintyCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Visibility" Value="Visible"/>
 									</i:EventTrigger>
 								</i:Interaction.Triggers>
 							</Button>
 							<ComboBox x:Name="certaintyCombo" Style="{StaticResource ComboBox-Sketch}" Margin="10,0" Visibility="Collapsed" SelectedIndex="0">
 								<i:Interaction.Triggers>
 									<i:EventTrigger EventName="SelectionChanged">
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=certaintyCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=certaintyCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Visibility" Value="Visible"/>
 									</i:EventTrigger>									
 									<i:EventTrigger EventName="SelectionChanged">
 										<i:Interaction.Behaviors>
@@ -354,58 +356,16 @@
 											</ei:ConditionBehavior>
 										</i:Interaction.Behaviors>
 										<pi:ActivateStateAction TargetState="CertaintyHidden"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value=""/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Visibility" Value="Collapsed"/>
 									</i:EventTrigger>
 								</i:Interaction.Triggers>
 								<ComboBoxItem Content="Possible" IsSelected="True"/>
 								<ComboBoxItem Content="Proposed"/>
 								<ComboBoxItem Content="No" ToolTipService.ToolTip="Negated certainty (text pending)"/>
-								<ComboBoxItem Content="Remove Certainty" Foreground="Red" ToolTipService.ToolTip="Remove the certainty decorator; means 'actual' (text pending)"/>
+								<ComboBoxItem Content="Remove Certainty" Foreground="Red" ToolTipService.ToolTip="Remove the certainty modifier; means 'actual' (text pending)"/>
 							</ComboBox>
-							<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" MinWidth="100" Margin="10,0">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="LostFocus">
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleVarName}" PropertyName="Text" Value="{Binding Text, ElementName=textBox}"/>
-									</i:EventTrigger>
-								</i:Interaction.Triggers>
-							</TextBox>
-							<Button x:Name="temporalButton" Content="T" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add temporality decorator" Margin="10,0" Opacity="0.5">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="MouseEnter">
-										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
-									</i:EventTrigger>
-									<i:EventTrigger EventName="MouseLeave">
-										<ei:ChangePropertyAction PropertyName="Opacity" Value="0.5" Duration="00:00:0.5"/>
-									</i:EventTrigger>
-									<i:EventTrigger EventName="Click">
-										<pi:ActivateStateAction TargetState="TemporalShown"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=temporalCombo}" PropertyName="SelectedIndex"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=temporalCombo}"/>
-									</i:EventTrigger>									
-								</i:Interaction.Triggers>
-							</Button>
-							<ComboBox x:Name="temporalCombo" Style="{StaticResource ComboBox-Sketch}" Margin="10,0" Visibility="Collapsed" SelectedIndex="0">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="SelectionChanged">
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=temporalCombo}"/>
-									</i:EventTrigger>										
-									<i:EventTrigger EventName="SelectionChanged">
-										<i:Interaction.Behaviors>
-											<ei:ConditionBehavior>
-												<ei:ConditionalExpression>
-													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=temporalCombo}" RightOperand="2"/>
-												</ei:ConditionalExpression>
-											</ei:ConditionBehavior>
-										</i:Interaction.Behaviors>
-										<pi:ActivateStateAction TargetState="TemporalHidden"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleCertainty}" PropertyName="Text" Value=""/>
-									</i:EventTrigger>								
-								</i:Interaction.Triggers>								
-								<ComboBoxItem Content="in the past" IsSelected="True"/>
-								<ComboBoxItem Content="in the future"/>
-								<ComboBoxItem Content="Remove Temporality" Foreground="Red" ToolTipService.ToolTip="Remove the temporality decorator; means 'current' (text pending)" />
-							</ComboBox>
-							<Button x:Name="experiencerButton" Content="E" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add experiencer decorator" Margin="10,0" Opacity="0.5">
+							
+							<Button x:Name="experiencerButton" Content="E" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add experiencer modifier" Margin="10,0" Opacity="0.5">
 								<i:Interaction.Triggers>
 									<i:EventTrigger EventName="MouseEnter">
 										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
@@ -417,6 +377,7 @@
 										<pi:ActivateStateAction TargetState="ExperiencerShown"/>
 										<ei:ChangePropertyAction TargetObject="{Binding ElementName=experiencerCombo}" PropertyName="SelectedIndex"/>
 										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=experiencerCombo}"/>										
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Visibility" Value="Visible"/>
 									</i:EventTrigger>									
 								</i:Interaction.Triggers>
 							</Button>
@@ -424,6 +385,7 @@
 								<i:Interaction.Triggers>
 									<i:EventTrigger EventName="SelectionChanged">
 										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=experiencerCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Visibility" Value="Visible"/>
 									</i:EventTrigger>										
 									<i:EventTrigger EventName="SelectionChanged">
 										<i:Interaction.Behaviors>
@@ -434,12 +396,61 @@
 											</ei:ConditionBehavior>
 										</i:Interaction.Behaviors>
 										<pi:ActivateStateAction TargetState="ExperiencerHidden"/>
-										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Text" Value=""/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleExperiencer}" PropertyName="Visibility" Value="Collapsed"/>
 									</i:EventTrigger>								
 								</i:Interaction.Triggers>								
-								<ComboBoxItem Content="in family members" IsSelected="True"/>
-								<ComboBoxItem Content="Remove Experiencer" Foreground="Red" ToolTipService.ToolTip="Remove the experiencer decorator, means 'with patient' (text pending)"/>
+								<ComboBoxItem Content="family" IsSelected="True"/>
+								<ComboBoxItem Content="Remove Experiencer" Foreground="Red" ToolTipService.ToolTip="Remove the experiencer modifier, means 'with patient' (text pending)"/>
 							</ComboBox>
+							
+							<Button x:Name="temporalButton" Content="T" Width="32" Style="{StaticResource Button-Sketch}" ToolTipService.ToolTip="Add temporality modifier" Margin="10,0" Opacity="0.5">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="MouseEnter">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="1" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="MouseLeave">
+										<ei:ChangePropertyAction PropertyName="Opacity" Value="0.5" Duration="00:00:0.5"/>
+									</i:EventTrigger>
+									<i:EventTrigger EventName="Click">
+										<pi:ActivateStateAction TargetState="TemporalShown"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=temporalCombo}" PropertyName="SelectedIndex"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=temporalCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Visibility" Value="Visible"/>
+									</i:EventTrigger>									
+								</i:Interaction.Triggers>
+							</Button>
+							<ComboBox x:Name="temporalCombo" Style="{StaticResource ComboBox-Sketch}" Margin="10,0" Visibility="Collapsed" SelectedIndex="0">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="SelectionChanged">
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Text" Value="{Binding SelectedItem.Content, ElementName=temporalCombo}"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Visibility" Value="Visible"/>
+									</i:EventTrigger>										
+									<i:EventTrigger EventName="SelectionChanged">
+										<i:Interaction.Behaviors>
+											<ei:ConditionBehavior>
+												<ei:ConditionalExpression>
+													<ei:ComparisonCondition LeftOperand="{Binding SelectedIndex, ElementName=temporalCombo}" RightOperand="2"/>
+												</ei:ConditionalExpression>
+											</ei:ConditionBehavior>
+										</i:Interaction.Behaviors>
+										<pi:ActivateStateAction TargetState="TemporalHidden"/>
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleTemporal}" PropertyName="Visibility" Value="Collapsed"/>
+									</i:EventTrigger>								
+								</i:Interaction.Triggers>								
+								<ComboBoxItem Content="history of" IsSelected="True"/>
+								<ComboBoxItem Content="future"/>
+								<ComboBoxItem Content="Remove Temporality" Foreground="Red" ToolTipService.ToolTip="Remove the temporality modifier; means 'current' (text pending)" />
+							</ComboBox>
+							
+							<TextBox x:Name="textBox" Style="{StaticResource BasicTextBox-Sketch}" Text="ColonCancer" MinWidth="100" Margin="10,0">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="LostFocus">
+										<ei:ChangePropertyAction TargetObject="{Binding ElementName=titleVarName}" PropertyName="Text" Value="{Binding Text, ElementName=textBox}"/>
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+							</TextBox>
+							
+							
 							
 						</StackPanel>
 						<Button Content="Submit" Style="{StaticResource Button-Sketch}" Width="75">
