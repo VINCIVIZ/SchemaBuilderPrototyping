@@ -247,6 +247,7 @@
     <DesignTimeOnly Include="SampleData\PhrasesDataSource\PhrasesDataSource.xsd" />
     <DesignTimeOnly Include="SampleData\SchemaListSource\SchemaListSource.xsd" />
     <DesignTimeOnly Include="SampleData\SynonymSampleData\SynonymSampleData.xsd" />
+    <None Include="Feedback Files\WendyHarry201302.feedback" />
     <None Include="Feedback Files\WendyMelissa20121130.feedback" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
